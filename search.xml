@@ -1,6 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>4 个鲜为人知的 GitHub 神技巧</title>
+    <url>/2022/05/25/4%E4%B8%AA%E9%B2%9C%E4%B8%BA%E4%BA%BA%E7%9F%A5%E7%9A%84GitHub%E7%A5%9E%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<h1 id="⭐️-在线阅读代码"><a class="header-anchor" href="#⭐️-在线阅读代码"> </a>⭐️ 在线阅读代码</h1>
+<p><strong>在仓库详情界面，按下 <code>.</code> 键</strong>，即可利用在线的 VSCode 阅读代码，而无需下载到本地。</p>
+<p><img src="https://s2.loli.net/2022/05/25/QivIAyOBlJwtW17.png" alt="image-20220525221133638"></p>
+<h1 id="⭐️-在线运行项目"><a class="header-anchor" href="#⭐️-在线运行项目"> </a>⭐️ 在线运行项目</h1>
+<p><strong>在项目的浏览器地址前，加上 <code>gitpod.io/#/</code> 前缀</strong>，即可在线运行项目。</p>
+<p><img src="https://s2.loli.net/2022/05/25/tf4hTWp6zEawcbl.png" alt="image-20220525220206900"></p>
+<h1 id="实用快捷键总结"><a class="header-anchor" href="#实用快捷键总结"> </a>实用快捷键总结</h1>
+<h2 id="查找文件"><a class="header-anchor" href="#查找文件"> </a>查找文件</h2>
+<p><strong>在仓库详情界面，按 <code>T</code> 键，然后输入要查找的文件名。</strong></p>
+<p><img src="https://s2.loli.net/2022/05/25/nt8vwl9GhS5agNj.png" alt="image-20220525221044873"></p>
+<h2 id="跳转至某行代码"><a class="header-anchor" href="#跳转至某行代码"> </a>跳转至某行代码</h2>
+<p>**在源代码界面，按 <code>L</code> 键，然后输入要跳转至的行号。**还可以：</p>
+<ul>
+<li>
+<p>复制该行代码</p>
+</li>
+<li>
+<p>生成永久链接（permalink）</p>
+<p><img src="https://s2.loli.net/2022/05/25/efQlqLiWrKacjdo.png" alt="image-20220525220504285"></p>
+</li>
+</ul>
+<h2 id="查看文件改动记录"><a class="header-anchor" href="#查看文件改动记录"> </a>查看文件改动记录</h2>
+<p><strong>在源代码界面，按 <code>B</code> 键</strong>，即可查看该文件的改动记录。</p>
+<p><img src="https://s2.loli.net/2022/05/25/5Yso6KmMBgJGbNH.png" alt="image-20220525222522439"></p>
+<h2 id="更多"><a class="header-anchor" href="#更多"> </a>更多</h2>
+<p>除此之外，GitHub还有超多快捷键，详见 <a href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">官方文档</a>。</p>
+<h1 id="订阅-GitHub-项目推送"><a class="header-anchor" href="#订阅-GitHub-项目推送"> </a>订阅 GitHub 项目推送</h1>
+<p><strong>在 GitHub 中的 <code>Explore</code> 页面中，点击 <code>Get email updates</code></strong>，即可让 GitHub 定期地推送自己可能感兴趣的优质项目，到自己的邮箱，以了解开源动态。</p>
+<p><img src="https://s2.loli.net/2022/05/25/TlqjEupSJ7F93xs.png" alt="image-20220525221835589"></p>
+<p><img src="https://s2.loli.net/2022/05/25/PKC19zry2vl8mha.png" alt="image-20220525222103562"></p>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"> </a>参考资料</h1>
+<p>再次强调，<strong>本文基于 B 站 UP 主 <a href="https://space.bilibili.com/12890453">@程序员鱼皮</a> 的《5 个隐藏的 GitHub 神技巧，助你秒变大佬！》视频总结而成</strong>，视频如下：</p>
+<iframe src="//player.bilibili.com/player.html?aid=853844464&amp;bvid=BV1q54y1f7h6&amp;cid=712063846&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+]]></content>
+      <categories>
+        <category>GitHub</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>搬运</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>技术分享06-Chromium多进程模型</title>
+    <url>/2021/09/22/Chromium%E5%A4%9A%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h1 id="概述"><a class="header-anchor" href="#概述"> </a>概述</h1>
+<p>相信你一定有这样的经历：打开很多个页面，不幸的是其中某个页面不响应了或者崩溃了，随之而来的是更不幸的事，所有页面都不响应或者都崩溃了。最让人崩溃的是其中一些页面还有未保存或者未发送的信息！但是，现在好了，现代浏览器很多都支持多进程模型，这个模型可以很好地避免上面的问题，虽然它很复杂而且也有自身的问题，例如更多的资源消耗，但是它的优势也是非常明显的。</p>
+<p>Chromium被构建得像一个操作系统，使用多进程隔离每个网站和浏览器自身，以一种安全而鲁棒的方式运行这些程序即使崩溃也不会互相影响。用户也可以在Chromium的任务管理器里查看每个进程的资源使用情况。</p>
+<h2 id="多进程架构的好处"><a class="header-anchor" href="#多进程架构的好处"> </a>多进程架构的好处</h2>
+<p>Chromium的多进程架构至少带来三点好处：</p>
+<ol>
+<li>避免单个页面的不响应或者奔溃影响整个浏览器的稳定性；</li>
+<li>当第三方插件奔溃时候不会影响页面或者浏览器的稳定性；</li>
+<li>方便了安全模型的实施，也就是说沙箱模型是基于多进程架构的。</li>
+</ol>
+<p>其实，这很大程度上也是WebKit2产生的原因。</p>
+<blockquote>
+<p><strong>WebKit：</strong></p>
+<p>​		**广义上来说，WebKit是一个开源的项目。该项目专注于网页内容的展示，开发出一流的网页渲染引擎。**该项目包含两个部分，第一是WebCore，其中包含了对HTML，CSS等很多W3C规范的实现；第二部分就是狭义上的WebKit，它主要是各个平台的的移植并提供相对应的Web接口，也就是WebView或者类似WebView，这些接口提供操作和显示网页的能力。目前使用WebKit的主流的浏览器或者WebView包括Chrome，Safari，QtWebKit，Android Browser以及众多的移动平台的浏览器。</p>
+<p><strong>WebKit2：</strong></p>
+<p>​        WebKit2相对于狭义上的WebKit而言，**它不是WebKit简单的第二个版本，它是一个新的API层，其最主要的变化在于将网页的渲染置于单独的进程，而接口层则在另外一个进程，它们之间通过IPC来通讯。**对于接口的调用者来说，中间的IPC和底下的实现是透明的，这样做的好处有很多，一个很明显的好处是，当网页的渲染出现问题时，不会阻碍Web接口的调用者进程，这会在很大程度上解决或者帮助解决浏览器或者这些调用者的稳定性和安全性等问题。</p>
+<p><strong>Chromium：</strong></p>
+<p>​		**Chromium是一个建立在WebKit之上的浏览器开源项目，由Google发起的。**该项目被创建以来发展迅速，很多先进的技术被采用，如跨进程模型，沙箱模型等等。同时，很多新的规范被支持，例如WebGL，Canvas2D，CSS3以及其他很多的HTML5特性，基本上每天你都可以看到它的变化，它的版本升级很快。在性能方面，其也备受称赞，包括快速启动，网页加载迅速等。</p>
+<p><strong>Chrome：</strong></p>
+<p>​		Chrome是Google公司的浏览器产品，它基于Chromium开源项目，**一般选择稳定的版本作为它的基础，它和Chromium的不同点在于Chromium是开源试验场，会尝试很多新的东西，当这些东西稳定之后，Chrome才会集成进来，这也就是说Chrome的版本会落后于Chromium。**另外一个就是，Chrome里面会加入一些私有的codec，这些仅在Chrome中才会出现。再次，Chrome还会整合Google的很多服务， 最后Chrome还会有自动更新的功能，这也是Chromium所没有的。</p>
+</blockquote>
+<blockquote>
+<p>​        <strong>在每个多进程架构里，Chromium的渲染器进程运行在一个沙箱进程中，它对用户电脑只有有限的访问权限。这些进程对用户的文件系统，显示器，或者大部分其他的资源没有直接的接触。相反，他们只通过浏览器进程获得对允许的资源的访问，而浏览器进程可以在这种访问上附加安全策略。</strong></p>
+<p><strong>沙盒模型：</strong></p>
+<p>​		一般而言，对于网络上的网页中的JavaScript代码和插件都是不受信的（除非是经过认证的网站），特别是一些故意设计侵入浏览器运行的主机代码更是非常危险，通过一些手段或者浏览器中的漏洞，这些代码可能获取了主机的管理权限，这对主机系统来说是非常危险的，所以保证网页本身之外，还需要保证浏览器和浏览器所在的系统不存在危险。</p>
+<p>如果有一种机制，将网页的运行限制在一个特定的环境中，也就是一个沙箱中，使它只能访问有限的功能。那么，即使网页工作的渲染引擎被攻击，它也不能够获取渲染引擎工作的主机系统中的任何权限，这一思想就是沙箱模型。</p>
+<p>“沙盒”技术与主动防御技术原理截然不同。主动防御是发现程序有可疑行为时立即拦截并终止运行。“沙盒”技术则是发现可疑行为后让程序继续运行，当发现的确是病毒时才会终止。<strong>“沙盒”技术的实践运用流程是：让疑似病毒文件的可疑行为在虚拟的“沙盒”里充分表演，“沙盒”会记下它的每一个动作；当疑似病毒充分暴露了其病毒属性后，“沙盒”就会执行“回滚”机制——将病毒的痕迹和动作抹去，恢复系统到正常状态。</strong></p>
+<p>简单来说就是，在一个装满了平整细沙的盒子里，我们可以尽情随意地在上面作画、涂写，无论画的好坏，最后轻轻一抹，沙盒又回到了原来的平整状态。沙盒的魅力就在于他允许你出错，还可以给你改正的机会。</p>
+</blockquote>
+<h1 id="Chromium-的进程模型"><a class="header-anchor" href="#Chromium-的进程模型"> </a>Chromium 的进程模型</h1>
+<p>下图给出了缺省的Chromium浏览器的进程模型。方框代表进程，连接线代表IPC（InterProcess Communication 进程间通信）。</p>
+<p><img src="https://i.loli.net/2021/09/27/rs5ITSegvcAh9qd.png" alt=""></p>
+<p>通常来讲，chromium浏览器包括以下主要进程类型：</p>
+<ol>
+<li>
+<p>Browser进程：浏览器的主进程，负责浏览器界面的显示，各个页面的管理，其他各种进程的管理；</p>
+</li>
+<li>
+<p>Render进程：页面的渲染进程，负责页面的渲染工作，WebKit的工作主要在这个进程中完成；</p>
+</li>
+<li>
+<p>NPAPI插件进程：每种类型的插件只会有一个进程，每个插件进程可以被多个Render进程共享；</p>
+</li>
+<li>
+<p>GPU进程：最多只有一个，当且仅当GPU硬件加速打开的时候才会被创建，主要用于对3D加速调用的实现；</p>
+</li>
+<li>
+<p>Pepper插件进程：同NPAPI插件进程，不同的是为Pepper插件而创建的进程。</p>
+</li>
+</ol>
+<p>Chromium浏览器的进程模型，包括以下特征：</p>
+<ol>
+<li>
+<p>Browser进程和页面是分开的，这保证了页面的奔溃不会导致浏览器主界面的奔溃；</p>
+</li>
+<li>
+<p>每个页面是独立的进程，这保证了页面之间相互不影响；</p>
+</li>
+<li>
+<p>插件进程也是独立的，插件的问题不会影响浏览器主界面和页面；</p>
+</li>
+<li>
+<p>GPU硬件加速进程也是独立的。</p>
+</li>
+</ol>
+<p>因为这么多的进程，开发者通常需要知道进程列表中的进程类别，这很简单，可以通过进程的命令行参数"–type"来识别。</p>
+<h1 id="Chromium-支持的模型"><a class="header-anchor" href="#Chromium-支持的模型"> </a>Chromium 支持的模型</h1>
+<p>Chromium支持四种不同的模型，它们影响浏览器分配页面给渲染进程的行为。</p>
+<h2 id="单网站实例单进程（默认）"><a class="header-anchor" href="#单网站实例单进程（默认）"> </a>单网站实例单进程（默认）</h2>
+<p>默认情况下，Chromium为用户访问的每个网站实例创建一个渲染器进程。这保证了不同网站的网页独立渲染，让对同一个网站的不同访问相互独立。因此一个网站实例中的失败（比如，渲染器崩溃）或者重的资源使用不会影响浏览器的其他部分。</p>
+<p>一个网站实例是一些相同网站的相连网页的集合。我们这样认为两个页面是相连的：如果他们可以在脚本代码中获取彼此的引用的话（比如：如果一个页面被另一个页面用Javascript在一个新窗口中打开）。因此，两个标签页可以在同一个渲染进程里展示页面，同时在给定的一个标签页中导航到网站外的一个网页，可能切换标签页的渲染进程。</p>
+<p><strong>优点</strong></p>
+<ul>
+<li>隔离不同网站的内容。这提供了网页内容的命运共享的一种有意义的形式，在这种形式中，网页间的失败不会相互影响。</li>
+<li>隔离展示相同网站的独立标签页。在不同的标签页中独立访问同样的网站会创建不同的进程。这可以避免同个实例中的争夺与失败，使其不会影响其他实例。</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>更多的内存负载。在大多数工作负载下，这个模型会比下面的每个网站一个进程创建更多渲染器进程。这虽然能增加稳定性并且增加并发的机会，但它也增加了内存负载。</li>
+<li>更复杂的实现。不像每个标签页一个进程或者单进程，这个模型需要复杂的逻辑以支持标签在网页间导航时的进程交换，以及代理一些允许的源之间的JavaScript行为，比如传递消息。</li>
+</ul>
+<h2 id="单网站单进程"><a class="header-anchor" href="#单网站单进程"> </a>单网站单进程</h2>
+<p>Chromium也支持这样一种进程模式，隔离不同的网站，但将相同网站的所有实例组合到一块。这创建更少的渲染进程，用鲁棒性交换更少的内存占用。这个模型基于内容的源，而非标签页间的关系。</p>
+<p><strong>优点</strong></p>
+<ul>
+<li>隔离不同网站的内容。正如每个网站实例一个进程的模型那样，不同网站的页面不会共享命运（不会同生共死）。</li>
+<li>更少的内存占用。这个模型比上一个模型和每个标签一个进程的模型可能创建更少的并行进程。这对于减少Chromium的内存足迹可能是需要的。</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>可能导致更大的渲染进程。像google.com这样的站点上有着大量的应用程序，它们可能在浏览器里被同时打开，并且全部在同一个进程里渲染。因此，这些应用程序中的资源争夺与失败会影响许多标签页，使得浏览器看起来不能更好地响应。</li>
+<li>实现更加复杂。与每个网站实例一个进程的模型相似，这需要在导航中交换进程以及代理一些javascript操作的逻辑。</li>
+</ul>
+<h2 id="单标签页单进程"><a class="header-anchor" href="#单标签页单进程"> </a>单标签页单进程</h2>
+<p>每个网站或每个网站实例一个进程都需要在创建渲染进程时考虑网站内容的源。Chromium也支持一种简单的模型，将一个渲染器进程分配给每组脚本相关的标签页。这个模型可以使用 --process-per-tab命令行开关来选中。</p>
+<p>特别地，Chromium会把一些脚本相关联的标签页成为一个浏览实例，它也与HTML5范畴中的“一个浏览上下文”对应。这个集合由一个标签以及这个标签用javascript代码所打开的标签组合而成。这样的标签必须在同一个进程中渲染，以允许在这些标签页间执行javascript调用（大多数通常发生在同源页面之间）。</p>
+<p><strong>优点</strong></p>
+<ul>
+<li>容易理解。每个标签页分配有一个渲染进程。</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>导致不想要的页面之间的命运共享。如果用户在浏览实例中导航一个标签页到一个不同的网站中，新的页面会和其他在同一个浏览实例中的任何其他标签页共享命运。</li>
+<li>在实践中并没有比单个网站实例单进程更简单。</li>
+</ul>
+<h2 id="单进程"><a class="header-anchor" href="#单进程"> </a>单进程</h2>
+<p>最后，出于比较的目的，Chromium支持单进程模型。在这个模型中，浏览器和渲染引擎跑在同一个操作系统进程里。</p>
+<p>单进程模型提供了一个衡量多进程架构带来的负荷的基线。这不是一个安全的架构，也不是一个鲁棒的架构，因为任何渲染器的崩溃会导致整个浏览器进程挂掉。它只是设计用于测试和开发目的，并且可能包含在其他架构中没有的bug。</p>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"> </a>参考资料</h1>
+<p><a href="https://www.cntofu.com/book/101/zh/General_Architecture/Process_Models.md">进程模型 - Chromium中文文档</a></p>
+<p><a href="https://blog.csdn.net/milado_nju/article/details/7292164">理解WebKit和Chromium: WebKit, WebKit2, Chromium和Chrome介绍 - CSDN</a></p>
+<p><a href="https://blog.csdn.net/haima1998/article/details/9292047">webkit和webkit2的区别 - CSDN</a></p>
+<p><a href="https://www.cnblogs.com/slly/p/6639173.html">浏览器沙箱模型 - 博客园</a></p>
+<p><a href="https://blog.csdn.net/iteye_10668/article/details/81618053">Google Chrome漫画书中文版  - CSDN</a></p>
+]]></content>
+      <categories>
+        <category>浏览器</category>
+      </categories>
+      <tags>
+        <tag>技术分享</tag>
+        <tag>Chromium</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode | 双指针I 167/633/345/680 | java实现</title>
     <url>/2020/01/20/Leetcode-%E5%8F%8C%E6%8C%87%E9%92%88I-167-633-345-680-java%E5%AE%9E%E7%8E%B0/</url>
     <content><![CDATA[<h1 id="167-两数之和-II-输入有序数组"><a class="header-anchor" href="#167-两数之和-II-输入有序数组"> </a>167. 两数之和 II - 输入有序数组</h1>
@@ -260,132 +431,6 @@ numbers = [2, 7, 11, 15], target = 9 输出: [1,2] 解释: 2 与 7 之和等于�
         <tag>算法</tag>
         <tag>Leetcode</tag>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>技术分享06-Chromium多进程模型</title>
-    <url>/2021/09/22/Chromium%E5%A4%9A%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<h1 id="概述"><a class="header-anchor" href="#概述"> </a>概述</h1>
-<p>相信你一定有这样的经历：打开很多个页面，不幸的是其中某个页面不响应了或者崩溃了，随之而来的是更不幸的事，所有页面都不响应或者都崩溃了。最让人崩溃的是其中一些页面还有未保存或者未发送的信息！但是，现在好了，现代浏览器很多都支持多进程模型，这个模型可以很好地避免上面的问题，虽然它很复杂而且也有自身的问题，例如更多的资源消耗，但是它的优势也是非常明显的。</p>
-<p>Chromium被构建得像一个操作系统，使用多进程隔离每个网站和浏览器自身，以一种安全而鲁棒的方式运行这些程序即使崩溃也不会互相影响。用户也可以在Chromium的任务管理器里查看每个进程的资源使用情况。</p>
-<h2 id="多进程架构的好处"><a class="header-anchor" href="#多进程架构的好处"> </a>多进程架构的好处</h2>
-<p>Chromium的多进程架构至少带来三点好处：</p>
-<ol>
-<li>避免单个页面的不响应或者奔溃影响整个浏览器的稳定性；</li>
-<li>当第三方插件奔溃时候不会影响页面或者浏览器的稳定性；</li>
-<li>方便了安全模型的实施，也就是说沙箱模型是基于多进程架构的。</li>
-</ol>
-<p>其实，这很大程度上也是WebKit2产生的原因。</p>
-<blockquote>
-<p><strong>WebKit：</strong></p>
-<p>​		**广义上来说，WebKit是一个开源的项目。该项目专注于网页内容的展示，开发出一流的网页渲染引擎。**该项目包含两个部分，第一是WebCore，其中包含了对HTML，CSS等很多W3C规范的实现；第二部分就是狭义上的WebKit，它主要是各个平台的的移植并提供相对应的Web接口，也就是WebView或者类似WebView，这些接口提供操作和显示网页的能力。目前使用WebKit的主流的浏览器或者WebView包括Chrome，Safari，QtWebKit，Android Browser以及众多的移动平台的浏览器。</p>
-<p><strong>WebKit2：</strong></p>
-<p>​        WebKit2相对于狭义上的WebKit而言，**它不是WebKit简单的第二个版本，它是一个新的API层，其最主要的变化在于将网页的渲染置于单独的进程，而接口层则在另外一个进程，它们之间通过IPC来通讯。**对于接口的调用者来说，中间的IPC和底下的实现是透明的，这样做的好处有很多，一个很明显的好处是，当网页的渲染出现问题时，不会阻碍Web接口的调用者进程，这会在很大程度上解决或者帮助解决浏览器或者这些调用者的稳定性和安全性等问题。</p>
-<p><strong>Chromium：</strong></p>
-<p>​		**Chromium是一个建立在WebKit之上的浏览器开源项目，由Google发起的。**该项目被创建以来发展迅速，很多先进的技术被采用，如跨进程模型，沙箱模型等等。同时，很多新的规范被支持，例如WebGL，Canvas2D，CSS3以及其他很多的HTML5特性，基本上每天你都可以看到它的变化，它的版本升级很快。在性能方面，其也备受称赞，包括快速启动，网页加载迅速等。</p>
-<p><strong>Chrome：</strong></p>
-<p>​		Chrome是Google公司的浏览器产品，它基于Chromium开源项目，**一般选择稳定的版本作为它的基础，它和Chromium的不同点在于Chromium是开源试验场，会尝试很多新的东西，当这些东西稳定之后，Chrome才会集成进来，这也就是说Chrome的版本会落后于Chromium。**另外一个就是，Chrome里面会加入一些私有的codec，这些仅在Chrome中才会出现。再次，Chrome还会整合Google的很多服务， 最后Chrome还会有自动更新的功能，这也是Chromium所没有的。</p>
-</blockquote>
-<blockquote>
-<p>​        <strong>在每个多进程架构里，Chromium的渲染器进程运行在一个沙箱进程中，它对用户电脑只有有限的访问权限。这些进程对用户的文件系统，显示器，或者大部分其他的资源没有直接的接触。相反，他们只通过浏览器进程获得对允许的资源的访问，而浏览器进程可以在这种访问上附加安全策略。</strong></p>
-<p><strong>沙盒模型：</strong></p>
-<p>​		一般而言，对于网络上的网页中的JavaScript代码和插件都是不受信的（除非是经过认证的网站），特别是一些故意设计侵入浏览器运行的主机代码更是非常危险，通过一些手段或者浏览器中的漏洞，这些代码可能获取了主机的管理权限，这对主机系统来说是非常危险的，所以保证网页本身之外，还需要保证浏览器和浏览器所在的系统不存在危险。</p>
-<p>如果有一种机制，将网页的运行限制在一个特定的环境中，也就是一个沙箱中，使它只能访问有限的功能。那么，即使网页工作的渲染引擎被攻击，它也不能够获取渲染引擎工作的主机系统中的任何权限，这一思想就是沙箱模型。</p>
-<p>“沙盒”技术与主动防御技术原理截然不同。主动防御是发现程序有可疑行为时立即拦截并终止运行。“沙盒”技术则是发现可疑行为后让程序继续运行，当发现的确是病毒时才会终止。<strong>“沙盒”技术的实践运用流程是：让疑似病毒文件的可疑行为在虚拟的“沙盒”里充分表演，“沙盒”会记下它的每一个动作；当疑似病毒充分暴露了其病毒属性后，“沙盒”就会执行“回滚”机制——将病毒的痕迹和动作抹去，恢复系统到正常状态。</strong></p>
-<p>简单来说就是，在一个装满了平整细沙的盒子里，我们可以尽情随意地在上面作画、涂写，无论画的好坏，最后轻轻一抹，沙盒又回到了原来的平整状态。沙盒的魅力就在于他允许你出错，还可以给你改正的机会。</p>
-</blockquote>
-<h1 id="Chromium-的进程模型"><a class="header-anchor" href="#Chromium-的进程模型"> </a>Chromium 的进程模型</h1>
-<p>下图给出了缺省的Chromium浏览器的进程模型。方框代表进程，连接线代表IPC（InterProcess Communication 进程间通信）。</p>
-<p><img src="https://i.loli.net/2021/09/27/rs5ITSegvcAh9qd.png" alt=""></p>
-<p>通常来讲，chromium浏览器包括以下主要进程类型：</p>
-<ol>
-<li>
-<p>Browser进程：浏览器的主进程，负责浏览器界面的显示，各个页面的管理，其他各种进程的管理；</p>
-</li>
-<li>
-<p>Render进程：页面的渲染进程，负责页面的渲染工作，WebKit的工作主要在这个进程中完成；</p>
-</li>
-<li>
-<p>NPAPI插件进程：每种类型的插件只会有一个进程，每个插件进程可以被多个Render进程共享；</p>
-</li>
-<li>
-<p>GPU进程：最多只有一个，当且仅当GPU硬件加速打开的时候才会被创建，主要用于对3D加速调用的实现；</p>
-</li>
-<li>
-<p>Pepper插件进程：同NPAPI插件进程，不同的是为Pepper插件而创建的进程。</p>
-</li>
-</ol>
-<p>Chromium浏览器的进程模型，包括以下特征：</p>
-<ol>
-<li>
-<p>Browser进程和页面是分开的，这保证了页面的奔溃不会导致浏览器主界面的奔溃；</p>
-</li>
-<li>
-<p>每个页面是独立的进程，这保证了页面之间相互不影响；</p>
-</li>
-<li>
-<p>插件进程也是独立的，插件的问题不会影响浏览器主界面和页面；</p>
-</li>
-<li>
-<p>GPU硬件加速进程也是独立的。</p>
-</li>
-</ol>
-<p>因为这么多的进程，开发者通常需要知道进程列表中的进程类别，这很简单，可以通过进程的命令行参数"–type"来识别。</p>
-<h1 id="Chromium-支持的模型"><a class="header-anchor" href="#Chromium-支持的模型"> </a>Chromium 支持的模型</h1>
-<p>Chromium支持四种不同的模型，它们影响浏览器分配页面给渲染进程的行为。</p>
-<h2 id="单网站实例单进程（默认）"><a class="header-anchor" href="#单网站实例单进程（默认）"> </a>单网站实例单进程（默认）</h2>
-<p>默认情况下，Chromium为用户访问的每个网站实例创建一个渲染器进程。这保证了不同网站的网页独立渲染，让对同一个网站的不同访问相互独立。因此一个网站实例中的失败（比如，渲染器崩溃）或者重的资源使用不会影响浏览器的其他部分。</p>
-<p>一个网站实例是一些相同网站的相连网页的集合。我们这样认为两个页面是相连的：如果他们可以在脚本代码中获取彼此的引用的话（比如：如果一个页面被另一个页面用Javascript在一个新窗口中打开）。因此，两个标签页可以在同一个渲染进程里展示页面，同时在给定的一个标签页中导航到网站外的一个网页，可能切换标签页的渲染进程。</p>
-<p><strong>优点</strong></p>
-<ul>
-<li>隔离不同网站的内容。这提供了网页内容的命运共享的一种有意义的形式，在这种形式中，网页间的失败不会相互影响。</li>
-<li>隔离展示相同网站的独立标签页。在不同的标签页中独立访问同样的网站会创建不同的进程。这可以避免同个实例中的争夺与失败，使其不会影响其他实例。</li>
-</ul>
-<p><strong>缺点</strong></p>
-<ul>
-<li>更多的内存负载。在大多数工作负载下，这个模型会比下面的每个网站一个进程创建更多渲染器进程。这虽然能增加稳定性并且增加并发的机会，但它也增加了内存负载。</li>
-<li>更复杂的实现。不像每个标签页一个进程或者单进程，这个模型需要复杂的逻辑以支持标签在网页间导航时的进程交换，以及代理一些允许的源之间的JavaScript行为，比如传递消息。</li>
-</ul>
-<h2 id="单网站单进程"><a class="header-anchor" href="#单网站单进程"> </a>单网站单进程</h2>
-<p>Chromium也支持这样一种进程模式，隔离不同的网站，但将相同网站的所有实例组合到一块。这创建更少的渲染进程，用鲁棒性交换更少的内存占用。这个模型基于内容的源，而非标签页间的关系。</p>
-<p><strong>优点</strong></p>
-<ul>
-<li>隔离不同网站的内容。正如每个网站实例一个进程的模型那样，不同网站的页面不会共享命运（不会同生共死）。</li>
-<li>更少的内存占用。这个模型比上一个模型和每个标签一个进程的模型可能创建更少的并行进程。这对于减少Chromium的内存足迹可能是需要的。</li>
-</ul>
-<p><strong>缺点</strong></p>
-<ul>
-<li>可能导致更大的渲染进程。像google.com这样的站点上有着大量的应用程序，它们可能在浏览器里被同时打开，并且全部在同一个进程里渲染。因此，这些应用程序中的资源争夺与失败会影响许多标签页，使得浏览器看起来不能更好地响应。</li>
-<li>实现更加复杂。与每个网站实例一个进程的模型相似，这需要在导航中交换进程以及代理一些javascript操作的逻辑。</li>
-</ul>
-<h2 id="单标签页单进程"><a class="header-anchor" href="#单标签页单进程"> </a>单标签页单进程</h2>
-<p>每个网站或每个网站实例一个进程都需要在创建渲染进程时考虑网站内容的源。Chromium也支持一种简单的模型，将一个渲染器进程分配给每组脚本相关的标签页。这个模型可以使用 --process-per-tab命令行开关来选中。</p>
-<p>特别地，Chromium会把一些脚本相关联的标签页成为一个浏览实例，它也与HTML5范畴中的“一个浏览上下文”对应。这个集合由一个标签以及这个标签用javascript代码所打开的标签组合而成。这样的标签必须在同一个进程中渲染，以允许在这些标签页间执行javascript调用（大多数通常发生在同源页面之间）。</p>
-<p><strong>优点</strong></p>
-<ul>
-<li>容易理解。每个标签页分配有一个渲染进程。</li>
-</ul>
-<p><strong>缺点</strong></p>
-<ul>
-<li>导致不想要的页面之间的命运共享。如果用户在浏览实例中导航一个标签页到一个不同的网站中，新的页面会和其他在同一个浏览实例中的任何其他标签页共享命运。</li>
-<li>在实践中并没有比单个网站实例单进程更简单。</li>
-</ul>
-<h2 id="单进程"><a class="header-anchor" href="#单进程"> </a>单进程</h2>
-<p>最后，出于比较的目的，Chromium支持单进程模型。在这个模型中，浏览器和渲染引擎跑在同一个操作系统进程里。</p>
-<p>单进程模型提供了一个衡量多进程架构带来的负荷的基线。这不是一个安全的架构，也不是一个鲁棒的架构，因为任何渲染器的崩溃会导致整个浏览器进程挂掉。它只是设计用于测试和开发目的，并且可能包含在其他架构中没有的bug。</p>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"> </a>参考资料</h1>
-<p><a href="https://www.cntofu.com/book/101/zh/General_Architecture/Process_Models.md">进程模型 - Chromium中文文档</a></p>
-<p><a href="https://blog.csdn.net/milado_nju/article/details/7292164">理解WebKit和Chromium: WebKit, WebKit2, Chromium和Chrome介绍 - CSDN</a></p>
-<p><a href="https://blog.csdn.net/haima1998/article/details/9292047">webkit和webkit2的区别 - CSDN</a></p>
-<p><a href="https://www.cnblogs.com/slly/p/6639173.html">浏览器沙箱模型 - 博客园</a></p>
-<p><a href="https://blog.csdn.net/iteye_10668/article/details/81618053">Google Chrome漫画书中文版  - CSDN</a></p>
-]]></content>
-      <categories>
-        <category>浏览器</category>
-      </categories>
-      <tags>
-        <tag>技术分享</tag>
-        <tag>Chromium</tag>
       </tags>
   </entry>
   <entry>
@@ -1800,6 +1845,61 @@ ws<span class="token punctuation">.</span><span class="token function-variable f
       </tags>
   </entry>
   <entry>
+    <title>技术分享04 - Rebase</title>
+    <url>/2021/08/31/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB04-Rebase/</url>
+    <content><![CDATA[<h1 id="🌰-一个例子"><a class="header-anchor" href="#🌰-一个例子"> </a>🌰 一个例子</h1>
+<ul>
+<li>
+<p>假设 <code>1-2-3</code> 是 <code>master</code> 分支的状态；</p>
+</li>
+<li>
+<p>此时从 <code>master</code> 分支中 checkout 了一个 <code>feat</code> 分支出来；</p>
+</li>
+<li>
+<p><code>master</code> 提交了 <code>4-5</code> ，<code>feat</code> 分支提交了 <code>6-7</code> ；</p>
+</li>
+<li>
+<p>所以现在 <code>master</code> 分支的状态为 <code>1-2-3-4-5</code> ，<code>feat</code> 分支的状态为 <code>1-2-3-6-7</code> 。</p>
+</li>
+</ul>
+<img src="https://i.loli.net/2021/08/31/7vXe8WFptYVn6C2.png" alt="image-20210831204806627" style="zoom:50%;">
+<ul>
+<li><strong>如果将 <code>feat</code> 分支 rebase 到 <code>master</code> 分支上</strong>，<code>feat</code> 分支的状态就变成了 <code>1-2-3-4-5-6-7</code>；</li>
+</ul>
+<p><img src="https://i.loli.net/2021/09/01/9bGt5CmkJWrZYTn.png" alt="image-20210901114131396"></p>
+<ul>
+<li><strong>如果将 <code>feat</code> 分支 merge 到 <code>master</code> 上</strong>，<code>master</code> 分支的状态就变成了 <code>1-2-3-4-5-6-7-8</code>；
+<ul>
+<li>这里的 <code>8</code> 就是“Merge branch ‘feat’ into ‘master’”的 commit 。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/08/31/6g5oemlqYdiIHEj.png" alt="image-20210831183024526"></p>
+<h1 id="rebase-merge"><a class="header-anchor" href="#rebase-merge"> </a>rebase &amp; merge</h1>
+<p>**rebase **会把你当前分支（上例中的 master）的 commit 放到目标分支（上例中的 feat）的最后面,所以叫变基。</p>
+<p>Rebase 和 Merge 实际上只是应用场景不同：</p>
+<p>例如现有上游分支 master，基于 master 分支拉出来一个开发分支 feat，在 feat 上开发了一段时间后要把 master 分支提交的新内容更新到 feat 分支，此时切换到 feat 分支，使用 <code>git rebase master</code></p>
+<p>等 feat 分支开发完成后，要合并到上游分支 master 上的时候，切换到 master 分支，使用 <code>git merge feat</code></p>
+<h2 id="使用-rebase-和-merge-的基本原则："><a class="header-anchor" href="#使用-rebase-和-merge-的基本原则："> </a>使用 rebase 和 merge 的基本原则：</h2>
+<ol>
+<li>下游分支更新上游分支内容的时候使用 <code>rebase</code></li>
+<li>上游分支合并下游分支内容的时候使用 <code>merge</code></li>
+<li>更新当前分支的内容时一定要使用 <code>--rebase</code> 参数</li>
+</ol>
+<h1 id="rebase-命令"><a class="header-anchor" href="#rebase-命令"> </a>rebase 命令</h1>
+<p>更新代码应使用 <code>git pull origin feat --rebase</code> 而不是 <code>git pull origin feat</code> ，因为 <code>git pull</code> 这条命令默认使用了 <code>--merge</code> 的方式更新代码。</p>
+<p>⚠️  但是在我们 rebase 后，直接使用 <code>git push origin feat</code> 会出现报错，我猜测原因是：使用 rebase 之后，feat 分支上有了 master 上所有的提交，也就是 master 分支的修改在 feat 分支上重演了一遍，相对远程 feat 分支而言，本地仓库的 feat 分支的“基底”已经变化了，直接 <code>push</code> 是不行的，所以确保没有问题的情况下必须使用 <code>--force</code> 参数才能提交。</p>
+<p><img src="https://i.loli.net/2021/09/07/657soxjMqfSmUkl.png" alt="image-20210907143102436"></p>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>技术分享</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>技术分享03 - 几个TypeScript小技巧</title>
     <url>/2021/08/30/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB03-%E5%87%A0%E4%B8%AATypeScript%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[<h1 id="注释"><a class="header-anchor" href="#注释"> </a>注释</h1>
@@ -1996,58 +2096,261 @@ b<span class="token punctuation">.</span>foo<span class="token punctuation">.</s
       </tags>
   </entry>
   <entry>
-    <title>技术分享04 - Rebase</title>
-    <url>/2021/08/31/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB04-Rebase/</url>
-    <content><![CDATA[<h1 id="🌰-一个例子"><a class="header-anchor" href="#🌰-一个例子"> </a>🌰 一个例子</h1>
+    <title>技术分享07 - CSRF攻击</title>
+    <url>/2021/10/11/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB07-CSRF%E6%94%BB%E5%87%BB/</url>
+    <content><![CDATA[<p>CSRF（Cross-site request forgery，中文为<strong>跨站请求伪造</strong>）是一种利用网站可信用户的权限去执行未授权的命令的一种恶意攻击。通过<strong>伪装可信用户的请求来利用信任该用户的网站</strong>，这种攻击方式虽然不是很流行，但是却难以防范，其危害也不比其他安全漏洞小。</p>
+<blockquote>
+<p>CSRF也称作<strong>one-click attack</strong>或者<strong>session riding</strong>，其简写有时候也会使用<strong>XSRF</strong>。</p>
+</blockquote>
+<h1 id="什么是CSRF？"><a class="header-anchor" href="#什么是CSRF？"> </a>什么是CSRF？</h1>
+<p>简单点说，CSRF攻击就是 <strong>攻击者利用受害者的身份，以受害者的名义发送恶意请求</strong>。</p>
+<blockquote>
+<p><strong>与XSS（Cross-site scripting，跨站脚本攻击）不同的是，XSS的目的是获取用户的身份信息，攻击者窃取到的是用户的身份（session/cookie），而CSRF则是利用用户当前的身份去做一些未经过授权的操作。</strong></p>
+</blockquote>
+<p>CSRF攻击最早在2001年被发现，由于它的请求是从用户的IP地址发起的，因此在服务器上的web日志中可能无法检测到是否受到了CSRF攻击，正是由于它的这种隐蔽性，很长时间以来都没有被公开的报告出来，直到2007年才真正的被人们所重视。</p>
+<h1 id="CSRF有哪些危害"><a class="header-anchor" href="#CSRF有哪些危害"> </a>CSRF有哪些危害</h1>
+<p>CSRF可以盗用受害者的身份，完成受害者在web浏览器有权限进行的任何操作，想想吧，能做的事情太多了。</p>
 <ul>
-<li>
-<p>假设 <code>1-2-3</code> 是 <code>master</code> 分支的状态；</p>
-</li>
-<li>
-<p>此时从 <code>master</code> 分支中 checkout 了一个 <code>feat</code> 分支出来；</p>
-</li>
-<li>
-<p><code>master</code> 提交了 <code>4-5</code> ，<code>feat</code> 分支提交了 <code>6-7</code> ；</p>
-</li>
-<li>
-<p>所以现在 <code>master</code> 分支的状态为 <code>1-2-3-4-5</code> ，<code>feat</code> 分支的状态为 <code>1-2-3-6-7</code> 。</p>
-</li>
+<li>以你的名义发送诈骗邮件，消息</li>
+<li>用你的账号购买商品</li>
+<li>用你的名义完成虚拟货币转账</li>
+<li>泄露个人隐私</li>
+<li>…</li>
 </ul>
-<img src="https://i.loli.net/2021/08/31/7vXe8WFptYVn6C2.png" alt="image-20210831204806627" style="zoom:50%;">
+<h1 id="产生原理以及利用方式"><a class="header-anchor" href="#产生原理以及利用方式"> </a>产生原理以及利用方式</h1>
+<p>要完成一个CSRF攻击，必须具备以下几个条件：</p>
 <ul>
-<li><strong>如果将 <code>feat</code> 分支 rebase 到 <code>master</code> 分支上</strong>，<code>feat</code> 分支的状态就变成了 <code>1-2-3-4-5-6-7</code>；</li>
+<li>受害者已经登录到了目标网站（你的网站）并且没有退出</li>
+<li>受害者有意或者无意的访问了攻击者发布的页面或者链接地址</li>
 </ul>
-<p><img src="https://i.loli.net/2021/09/01/9bGt5CmkJWrZYTn.png" alt="image-20210901114131396"></p>
-<ul>
-<li><strong>如果将 <code>feat</code> 分支 merge 到 <code>master</code> 上</strong>，<code>master</code> 分支的状态就变成了 <code>1-2-3-4-5-6-7-8</code>；
-<ul>
-<li>这里的 <code>8</code> 就是“Merge branch ‘feat’ into ‘master’”的 commit 。</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/08/31/6g5oemlqYdiIHEj.png" alt="image-20210831183024526"></p>
-<h1 id="rebase-merge"><a class="header-anchor" href="#rebase-merge"> </a>rebase &amp; merge</h1>
-<p>**rebase **会把你当前分支（上例中的 master）的 commit 放到目标分支（上例中的 feat）的最后面,所以叫变基。</p>
-<p>Rebase 和 Merge 实际上只是应用场景不同：</p>
-<p>例如现有上游分支 master，基于 master 分支拉出来一个开发分支 feat，在 feat 上开发了一段时间后要把 master 分支提交的新内容更新到 feat 分支，此时切换到 feat 分支，使用 <code>git rebase master</code></p>
-<p>等 feat 分支开发完成后，要合并到上游分支 master 上的时候，切换到 master 分支，使用 <code>git merge feat</code></p>
-<h2 id="使用-rebase-和-merge-的基本原则："><a class="header-anchor" href="#使用-rebase-和-merge-的基本原则："> </a>使用 rebase 和 merge 的基本原则：</h2>
+<p>整个步骤大致是这个样子的：</p>
 <ol>
-<li>下游分支更新上游分支内容的时候使用 <code>rebase</code></li>
-<li>上游分支合并下游分支内容的时候使用 <code>merge</code></li>
-<li>更新当前分支的内容时一定要使用 <code>--rebase</code> 参数</li>
+<li>用户小明在你的网站A上面登录了，A返回了一个session ID（使用cookie存储）</li>
+<li>小明的浏览器保持着在A网站的登录状态，事实上几乎所有的网站都是这样做的，一般至少是用户关闭浏览器之前用户的会话是不会结束的</li>
+<li>攻击者小强给小明发送了一个链接地址，小明打开了这个地址，查看了网页的内容</li>
+<li>小明在打开这个地址的时候，这个页面已经自动的对网站A发送了一个请求，这时候因为A网站没有退出，因此只要请求的地址是A的就会携带A的cookie信息，也就是使用A与小明之间的会话</li>
+<li>这时候A网站肯定是不知道这个请求其实是小强伪造的网页上发送的，而是误以为小明就是要这样操作，这样小强就可以随意的更改小明在A上的信息，以小明的身份在A网站上进行操作</li>
 </ol>
-<h1 id="rebase-命令"><a class="header-anchor" href="#rebase-命令"> </a>rebase 命令</h1>
-<p>更新代码应使用 <code>git pull origin feat --rebase</code> 而不是 <code>git pull origin feat</code> ，因为 <code>git pull</code> 这条命令默认使用了 <code>--merge</code> 的方式更新代码。</p>
-<p>⚠️  但是在我们 rebase 后，直接使用 <code>git push origin feat</code> 会出现报错，我猜测原因是：使用 rebase 之后，feat 分支上有了 master 上所有的提交，也就是 master 分支的修改在 feat 分支上重演了一遍，相对远程 feat 分支而言，本地仓库的 feat 分支的“基底”已经变化了，直接 <code>push</code> 是不行的，所以确保没有问题的情况下必须使用 <code>--force</code> 参数才能提交。</p>
-<p><img src="https://i.loli.net/2021/09/07/657soxjMqfSmUkl.png" alt="image-20210907143102436"></p>
+<h2 id="利用方式"><a class="header-anchor" href="#利用方式"> </a>利用方式</h2>
+<p>利用CSRF攻击，主要包含两种方式，一种是基于GET请求方式的利用，另一种是基于POST请求方式的利用。</p>
+<h3 id="GET请求利用"><a class="header-anchor" href="#GET请求利用"> </a>GET请求利用</h3>
+<p>使用GET请求方式的利用是最简单的一种利用方式，其隐患的来源主要是由于在开发系统的时候没有按照HTTP动词的正确使用方式来使用造成的。<strong>对于GET请求来说，它所发起的请求应该是只读的，不允许对网站的任何内容进行修改</strong>。</p>
+<p>但是事实上并不是如此，很多网站在开发的时候，<strong>研发人员错误的认为GET/POST的使用区别</strong>仅仅是在于发送请求的数据是在Body中还是在请求地址中，以及请求内容的大小不同。<strong>对于一些危险的操作比如删除文章，用户授权等允许使用GET方式发送请求，在请求参数中加上文章或者用户的ID，这样就造成了只要请求地址被调用，数据就会产生修改。</strong></p>
+<p>现在假设攻击者（用户ID=121）想将自己的身份添加为网站的管理员，他在网站A上面发了一个帖子，里面包含一张图片，其地址为http://a.com/user/grant_super_user/121</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;img src="http://a.com/user/grant_super_user/121" /&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>设想管理员看到这个帖子的时候，这个图片肯定会自动加载显示的。于是在管理员不知情的情况下，一个赋予用户管理员权限的操作已经悄悄的以他的身份执行了。这时候攻击者121就获取到了网站的管理员权限。</p>
+<h3 id="POST请求利用"><a class="header-anchor" href="#POST请求利用"> </a>POST请求利用</h3>
+<p>相对于GET方式的利用，POST方式的利用更加复杂一些，难度也大了一些。攻击者需要伪造一个能够自动提交的表单来发送POST请求。</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;script&gt;
+
+$(function() {
+
+    $('#CSRF_forCSRFm').trigger('submit');
+
+});
+
+&lt;/script&gt;
+
+&lt;form action="http://a.com/user/grant_super_user" id="CSRF_form" method="post"&gt;
+
+    &lt;input name="uid" value="121" type="hidden"&gt;
+
+&lt;/form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>只要想办法实现用户访问的时候自动提交表单就可以了。</p>
+<h1 id="防范原理"><a class="header-anchor" href="#防范原理"> </a>防范原理</h1>
+<p>防范CSRF攻击，其实本质就是要求网站<strong>能够识别出哪些请求是非正常用户主动发起的</strong>。这就要求我们<strong>在请求中嵌入一些额外的授权数据，让网站服务器能够区分出这些未授权的请求</strong>，比如说在请求参数中添加一个字段，这个字段的值从登录用户的Cookie或者页面中获取的（这个字段的值必须对每个用户来说是随机的，不能有规律可循）。攻击者伪造请求的时候是无法获取页面中与登录用户有关的一个随机值或者用户当前cookie中的内容的，因此就可以避免这种攻击。</p>
+<h2 id="防范技术"><a class="header-anchor" href="#防范技术"> </a>防范技术</h2>
+<h3 id="Synchronizer-token-pattern"><a class="header-anchor" href="#Synchronizer-token-pattern"> </a>Synchronizer token pattern</h3>
+<p>**令牌同步模式（Synchronizer token pattern，简称STP）**是在用户请求的页面中的所有表单中嵌入一个token，在服务端验证这个token的技术。token可以是任意的内容，但是一定要保证无法被攻击者猜测到或者查询到。攻击者在请求中无法使用正确的token，因此可以判断出未授权的请求。</p>
+<p><strong>简单实现STP</strong>：</p>
+<p>首先在index.php中，创建一个表单，在表单中，<strong>我们将session中存储的token放入到隐藏域</strong>，这样，表单提交的时候token会随表单一起提交</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;?php
+
+    $token = sha1(uniqid(rand(), true));
+
+    $_SESSION['token'] = $token;
+
+?&gt;
+
+&lt;form action="buy.php" method="post"&gt;
+
+    &lt;input type="hidden" name="token" value="&lt;?=$token; ?&gt;" /&gt;
+
+    ... 表单内容
+
+&lt;/form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在服务端校验请求参数的buy.php中，对表单提交过来的token与session中存储的token进行比对，如果一致说明token是有效的</p>
+<pre class="line-numbers language-none"><code class="language-none">if ($_POST['token'] != $_SESSION['token']) {
+
+    // TOKEN无效
+
+    throw new \Exception('Token无效，请求为伪造请求');
+
+}
+
+// TOKEN有效，表单内容处理<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>对于攻击者来说，在伪造请求的时候是无法获取到用户页面中的这个token值的，因此就可以识别出其创建的伪造请求。</p>
+<h3 id="Cookie-to-Header-Token"><a class="header-anchor" href="#Cookie-to-Header-Token"> </a>Cookie-to-Header Token</h3>
+<p>对于使用Js作为主要交互技术的网站，<strong>将CSRF的token写入到cookie中</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">Set-Cookie: CSRF-token=i8XNjC4b8KVok4uw5RftR38Wgp2BFwql; expires=Thu, 23-Jul-2015 10:25:33 GMT; Max-Age=31449600; Path=/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后使用javascript读取token的值，在发送http请求的时候将其作为请求的header</p>
+<pre class="line-numbers language-none"><code class="language-none">X-CSRF-Token: i8XNjC4b8KVok4uw5RftR38Wgp2BFwql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>最后服务器验证请求头中的token是否合法。</p>
+<h3 id="验证码"><a class="header-anchor" href="#验证码"> </a>验证码</h3>
+<p><strong>使用验证码可以杜绝CSRF攻击</strong>，但是这种方式要求每个请求都输入一个验证码，显然没有哪个网站愿意使用这种粗暴的方式，用户体验太差，用户会疯掉的。</p>
 ]]></content>
       <categories>
-        <category>Git</category>
+        <category>安全</category>
       </categories>
       <tags>
-        <tag>Git</tag>
         <tag>技术分享</tag>
+        <tag>安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>技术分享08 - 前缀树</title>
+    <url>/2021/10/20/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB08-%E5%89%8D%E7%BC%80%E6%A0%91/</url>
+    <content><![CDATA[<h1 id="背景-搜索引擎关键字提示"><a class="header-anchor" href="#背景-搜索引擎关键字提示"> </a>背景 - 搜索引擎关键字提示</h1>
+<p>搜索关键字智能提示是一个搜索应用的标配，主要作用是避免用户输入错误的搜索词，将用户引导到相应的关键词上，以提升用户搜索体验。</p>
+<h1 id="前缀匹配原则"><a class="header-anchor" href="#前缀匹配原则"> </a>前缀匹配原则</h1>
+<p>例如：在搜索框中输入“海底”，搜索框下面会以海底为前缀，展示“海底捞”、“海底捞火锅”、“海底世界”等等搜索词；输入“万达”，会提示“万达影城”、“万达广场”、“万达百货”等搜索词。</p>
+<h1 id="Trie树"><a class="header-anchor" href="#Trie树"> </a>Trie树</h1>
+<p>Trie树，即字典树，又称单词查找树或键树，是一种树形结构，是一种哈希树的变种。</p>
+<p>例如，给出一组单词——重庆鸡公煲、重庆火锅、重庆小天鹅、海底捞、海底世界、海洋公园，我们可以得到下面的Trie：</p>
+<img src="https://i.loli.net/2021/10/20/t8hc4I26vor1OEC.png" alt="Trie树" style="zoom:50%;">
+<p>从上图可知，当用户输入前缀”重庆“的时候，搜索框可能会展示以”重庆“为前缀的“重庆鸡公煲”、“重庆火锅”、”重庆小天鹅”等关键词，再当用户输入前缀”海底“的时候，搜索框里面可能会提示以”海底“为前缀的“海底捞”、”海底世界“等关键词。</p>
+<h2 id="基本性质"><a class="header-anchor" href="#基本性质"> </a>基本性质</h2>
+<ol>
+<li>根节点不包含字符，除根节点意外每个节点只包含一个字符。</li>
+<li>从根节点到某一个节点，路径上经过的字符连接起来，为该节点对应的字符串。</li>
+<li>每个节点的所有子节点包含的字符串不相同。</li>
+</ol>
+<h2 id="应用"><a class="header-anchor" href="#应用"> </a>应用</h2>
+<p>典型应用是用于统计和排序大量的字符串（但不仅限于字符串），所以经常被搜索引擎系统用于文本词频统计。</p>
+<h2 id="优点"><a class="header-anchor" href="#优点"> </a>优点</h2>
+<p>可以最大限度地减少无谓的字符串比较，故可以用于词频统计和大量字符串排序。</p>
+<p>跟哈希表比较：</p>
+<ol>
+<li>最坏情况时间复杂度比hash表好</li>
+<li>没有冲突，除非一个key对应多个值（除key外的其他信息）</li>
+<li>可以自带排序功能，中序遍历trie就可以得到排序</li>
+</ol>
+<h2 id="缺点"><a class="header-anchor" href="#缺点"> </a>缺点</h2>
+<ol>
+<li>Trie其实是一个以空间换时间的算法</li>
+<li>如果数据存储在外部存储器等较慢位置，Trie会较hash速度慢（hash访问O(1)次外存，Trie访问O(树高)）</li>
+</ol>
+<h2 id="实现"><a class="header-anchor" href="#实现"> </a>实现</h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">TrieNode</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span> <span class="token comment">// value 为单个字符</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>children <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>isEnd <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment">// 是否为字符串的结尾结点</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+   * @description: 根据字符，寻找结点
+   * @param {Char} val 要查找的字符
+   * @return {TrieNode | null} 找到的结点 ｜ null
+   */</span>
+  <span class="token function">findNode</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> child <span class="token keyword">of</span> <span class="token keyword">this</span><span class="token punctuation">.</span>children<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>child<span class="token punctuation">.</span>value <span class="token operator">===</span> val<span class="token punctuation">)</span> <span class="token keyword">return</span> child<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Trie</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>root <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TrieNode</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Trie 树的根结点</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">insert</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> node <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>root<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> c <span class="token keyword">of</span> str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> findNode <span class="token operator">=</span> node<span class="token punctuation">.</span><span class="token function">findNode</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// 当当前字符没有对应子结点时，创建一个节点，并作为当前结点的子结点</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>findNode <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        findNode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TrieNode</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        node<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>findNode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      node <span class="token operator">=</span> findNode<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 遍历字符串结束，标记当前结点为结尾结点</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>node<span class="token punctuation">.</span>isEnd<span class="token punctuation">)</span> node<span class="token punctuation">.</span>isEnd <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">search</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> node <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>root<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> c <span class="token keyword">of</span> str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> findNode <span class="token operator">=</span> node<span class="token punctuation">.</span><span class="token function">findNode</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>findNode <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 没找到</span>
+      <span class="token keyword">else</span> node <span class="token operator">=</span> findNode<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>           <span class="token comment">// 包含前缀为 str 的所有字符串的数组</span>
+    <span class="token keyword">let</span> track <span class="token operator">=</span> str<span class="token punctuation">;</span>        <span class="token comment">// 回溯的路径</span>
+    <span class="token function">backtrack</span><span class="token punctuation">(</span>track<span class="token punctuation">,</span> node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     * @description: 回溯遍历返回所有前缀为 str 的字符串
+     * @param {String} track 前缀为 str 的字符串
+     * @param {TrieNode} node 要遍历的结点
+     * @return {void}
+     */</span>
+    <span class="token keyword">function</span> <span class="token function">backtrack</span><span class="token punctuation">(</span><span class="token parameter">track<span class="token punctuation">,</span> node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 结果只包含“海洋公园”</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>children<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>track<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">// // 结果包含“海洋”和“海洋公园”</span>
+      <span class="token comment">// if (node.isEnd) {</span>
+      <span class="token comment">//   res.push(track);</span>
+      <span class="token comment">//   if (node.children.length === 0)</span>
+      <span class="token comment">//     return;</span>
+      <span class="token comment">// }</span>
+
+      node<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">child</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        track <span class="token operator">+=</span> child<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+        <span class="token function">backtrack</span><span class="token punctuation">(</span>track<span class="token punctuation">,</span> child<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        track <span class="token operator">=</span> track<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> trie <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Trie</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+trie<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">'重庆鸡公煲'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+trie<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">'重庆火锅'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+trie<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">'重庆小天鹅'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+trie<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">'海底捞'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+trie<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">'海底捞火锅'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+trie<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">'海底世界'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+trie<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">'海洋'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+trie<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">'海洋公园'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'搜索【重庆】的结果：'</span><span class="token punctuation">,</span> trie<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token string">'重庆'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'搜索【海】的结果：'</span><span class="token punctuation">,</span> trie<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token string">'海'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'搜索【火锅】的结果：'</span><span class="token punctuation">,</span> trie<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token string">'火锅'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="进阶练习"><a class="header-anchor" href="#进阶练习"> </a>进阶练习</h1>
+<p><a href="https://leetcode-cn.com/problems/design-add-and-search-words-data-structure/">211. 添加与搜索单词 - 数据结构设计 ｜ Leetcode</a></p>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"> </a>参考资料</h1>
+<p><a href="https://tech.meituan.com/2014/02/17/pinyin-suggest.html">搜索引擎关键字智能提示的一种实现 ｜ 美团技术团队</a></p>
+<p><a href="https://www.cnblogs.com/bonelee/p/8830825.html">Trie（前缀树/字典树）及其应用</a></p>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>技术分享</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -2198,264 +2501,6 @@ b<span class="token punctuation">.</span>foo<span class="token punctuation">.</s
       <tags>
         <tag>技术分享</tag>
         <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>技术分享08 - 前缀树</title>
-    <url>/2021/10/20/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB08-%E5%89%8D%E7%BC%80%E6%A0%91/</url>
-    <content><![CDATA[<h1 id="背景-搜索引擎关键字提示"><a class="header-anchor" href="#背景-搜索引擎关键字提示"> </a>背景 - 搜索引擎关键字提示</h1>
-<p>搜索关键字智能提示是一个搜索应用的标配，主要作用是避免用户输入错误的搜索词，将用户引导到相应的关键词上，以提升用户搜索体验。</p>
-<h1 id="前缀匹配原则"><a class="header-anchor" href="#前缀匹配原则"> </a>前缀匹配原则</h1>
-<p>例如：在搜索框中输入“海底”，搜索框下面会以海底为前缀，展示“海底捞”、“海底捞火锅”、“海底世界”等等搜索词；输入“万达”，会提示“万达影城”、“万达广场”、“万达百货”等搜索词。</p>
-<h1 id="Trie树"><a class="header-anchor" href="#Trie树"> </a>Trie树</h1>
-<p>Trie树，即字典树，又称单词查找树或键树，是一种树形结构，是一种哈希树的变种。</p>
-<p>例如，给出一组单词——重庆鸡公煲、重庆火锅、重庆小天鹅、海底捞、海底世界、海洋公园，我们可以得到下面的Trie：</p>
-<img src="https://i.loli.net/2021/10/20/t8hc4I26vor1OEC.png" alt="Trie树" style="zoom:50%;">
-<p>从上图可知，当用户输入前缀”重庆“的时候，搜索框可能会展示以”重庆“为前缀的“重庆鸡公煲”、“重庆火锅”、”重庆小天鹅”等关键词，再当用户输入前缀”海底“的时候，搜索框里面可能会提示以”海底“为前缀的“海底捞”、”海底世界“等关键词。</p>
-<h2 id="基本性质"><a class="header-anchor" href="#基本性质"> </a>基本性质</h2>
-<ol>
-<li>根节点不包含字符，除根节点意外每个节点只包含一个字符。</li>
-<li>从根节点到某一个节点，路径上经过的字符连接起来，为该节点对应的字符串。</li>
-<li>每个节点的所有子节点包含的字符串不相同。</li>
-</ol>
-<h2 id="应用"><a class="header-anchor" href="#应用"> </a>应用</h2>
-<p>典型应用是用于统计和排序大量的字符串（但不仅限于字符串），所以经常被搜索引擎系统用于文本词频统计。</p>
-<h2 id="优点"><a class="header-anchor" href="#优点"> </a>优点</h2>
-<p>可以最大限度地减少无谓的字符串比较，故可以用于词频统计和大量字符串排序。</p>
-<p>跟哈希表比较：</p>
-<ol>
-<li>最坏情况时间复杂度比hash表好</li>
-<li>没有冲突，除非一个key对应多个值（除key外的其他信息）</li>
-<li>可以自带排序功能，中序遍历trie就可以得到排序</li>
-</ol>
-<h2 id="缺点"><a class="header-anchor" href="#缺点"> </a>缺点</h2>
-<ol>
-<li>Trie其实是一个以空间换时间的算法</li>
-<li>如果数据存储在外部存储器等较慢位置，Trie会较hash速度慢（hash访问O(1)次外存，Trie访问O(树高)）</li>
-</ol>
-<h2 id="实现"><a class="header-anchor" href="#实现"> </a>实现</h2>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">TrieNode</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span> <span class="token comment">// value 为单个字符</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>children <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>isEnd <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment">// 是否为字符串的结尾结点</span>
-  <span class="token punctuation">}</span>
-
-  <span class="token comment">/**
-   * @description: 根据字符，寻找结点
-   * @param {Char} val 要查找的字符
-   * @return {TrieNode | null} 找到的结点 ｜ null
-   */</span>
-  <span class="token function">findNode</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> child <span class="token keyword">of</span> <span class="token keyword">this</span><span class="token punctuation">.</span>children<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>child<span class="token punctuation">.</span>value <span class="token operator">===</span> val<span class="token punctuation">)</span> <span class="token keyword">return</span> child<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Trie</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>root <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TrieNode</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Trie 树的根结点</span>
-  <span class="token punctuation">}</span>
-
-  <span class="token function">insert</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> node <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>root<span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> c <span class="token keyword">of</span> str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">let</span> findNode <span class="token operator">=</span> node<span class="token punctuation">.</span><span class="token function">findNode</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-      <span class="token comment">// 当当前字符没有对应子结点时，创建一个节点，并作为当前结点的子结点</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>findNode <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        findNode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TrieNode</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        node<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>findNode<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-
-      node <span class="token operator">=</span> findNode<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment">// 遍历字符串结束，标记当前结点为结尾结点</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>node<span class="token punctuation">.</span>isEnd<span class="token punctuation">)</span> node<span class="token punctuation">.</span>isEnd <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-
-  <span class="token function">search</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> node <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>root<span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> c <span class="token keyword">of</span> str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">const</span> findNode <span class="token operator">=</span> node<span class="token punctuation">.</span><span class="token function">findNode</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>findNode <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 没找到</span>
-      <span class="token keyword">else</span> node <span class="token operator">=</span> findNode<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    
-    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>           <span class="token comment">// 包含前缀为 str 的所有字符串的数组</span>
-    <span class="token keyword">let</span> track <span class="token operator">=</span> str<span class="token punctuation">;</span>        <span class="token comment">// 回溯的路径</span>
-    <span class="token function">backtrack</span><span class="token punctuation">(</span>track<span class="token punctuation">,</span> node<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-
-    <span class="token comment">/**
-     * @description: 回溯遍历返回所有前缀为 str 的字符串
-     * @param {String} track 前缀为 str 的字符串
-     * @param {TrieNode} node 要遍历的结点
-     * @return {void}
-     */</span>
-    <span class="token keyword">function</span> <span class="token function">backtrack</span><span class="token punctuation">(</span><span class="token parameter">track<span class="token punctuation">,</span> node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token comment">// 结果只包含“海洋公园”</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>children<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>track<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-      <span class="token comment">// // 结果包含“海洋”和“海洋公园”</span>
-      <span class="token comment">// if (node.isEnd) {</span>
-      <span class="token comment">//   res.push(track);</span>
-      <span class="token comment">//   if (node.children.length === 0)</span>
-      <span class="token comment">//     return;</span>
-      <span class="token comment">// }</span>
-
-      node<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">child</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-        track <span class="token operator">+=</span> child<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
-        <span class="token function">backtrack</span><span class="token punctuation">(</span>track<span class="token punctuation">,</span> child<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        track <span class="token operator">=</span> track<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">const</span> trie <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Trie</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-trie<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">'重庆鸡公煲'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-trie<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">'重庆火锅'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-trie<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">'重庆小天鹅'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-trie<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">'海底捞'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-trie<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">'海底捞火锅'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-trie<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">'海底世界'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-trie<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">'海洋'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-trie<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string">'海洋公园'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'搜索【重庆】的结果：'</span><span class="token punctuation">,</span> trie<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token string">'重庆'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'搜索【海】的结果：'</span><span class="token punctuation">,</span> trie<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token string">'海'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'搜索【火锅】的结果：'</span><span class="token punctuation">,</span> trie<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token string">'火锅'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="进阶练习"><a class="header-anchor" href="#进阶练习"> </a>进阶练习</h1>
-<p><a href="https://leetcode-cn.com/problems/design-add-and-search-words-data-structure/">211. 添加与搜索单词 - 数据结构设计 ｜ Leetcode</a></p>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"> </a>参考资料</h1>
-<p><a href="https://tech.meituan.com/2014/02/17/pinyin-suggest.html">搜索引擎关键字智能提示的一种实现 ｜ 美团技术团队</a></p>
-<p><a href="https://www.cnblogs.com/bonelee/p/8830825.html">Trie（前缀树/字典树）及其应用</a></p>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>技术分享</tag>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>技术分享07 - CSRF攻击</title>
-    <url>/2021/10/11/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB07-CSRF%E6%94%BB%E5%87%BB/</url>
-    <content><![CDATA[<p>CSRF（Cross-site request forgery，中文为<strong>跨站请求伪造</strong>）是一种利用网站可信用户的权限去执行未授权的命令的一种恶意攻击。通过<strong>伪装可信用户的请求来利用信任该用户的网站</strong>，这种攻击方式虽然不是很流行，但是却难以防范，其危害也不比其他安全漏洞小。</p>
-<blockquote>
-<p>CSRF也称作<strong>one-click attack</strong>或者<strong>session riding</strong>，其简写有时候也会使用<strong>XSRF</strong>。</p>
-</blockquote>
-<h1 id="什么是CSRF？"><a class="header-anchor" href="#什么是CSRF？"> </a>什么是CSRF？</h1>
-<p>简单点说，CSRF攻击就是 <strong>攻击者利用受害者的身份，以受害者的名义发送恶意请求</strong>。</p>
-<blockquote>
-<p><strong>与XSS（Cross-site scripting，跨站脚本攻击）不同的是，XSS的目的是获取用户的身份信息，攻击者窃取到的是用户的身份（session/cookie），而CSRF则是利用用户当前的身份去做一些未经过授权的操作。</strong></p>
-</blockquote>
-<p>CSRF攻击最早在2001年被发现，由于它的请求是从用户的IP地址发起的，因此在服务器上的web日志中可能无法检测到是否受到了CSRF攻击，正是由于它的这种隐蔽性，很长时间以来都没有被公开的报告出来，直到2007年才真正的被人们所重视。</p>
-<h1 id="CSRF有哪些危害"><a class="header-anchor" href="#CSRF有哪些危害"> </a>CSRF有哪些危害</h1>
-<p>CSRF可以盗用受害者的身份，完成受害者在web浏览器有权限进行的任何操作，想想吧，能做的事情太多了。</p>
-<ul>
-<li>以你的名义发送诈骗邮件，消息</li>
-<li>用你的账号购买商品</li>
-<li>用你的名义完成虚拟货币转账</li>
-<li>泄露个人隐私</li>
-<li>…</li>
-</ul>
-<h1 id="产生原理以及利用方式"><a class="header-anchor" href="#产生原理以及利用方式"> </a>产生原理以及利用方式</h1>
-<p>要完成一个CSRF攻击，必须具备以下几个条件：</p>
-<ul>
-<li>受害者已经登录到了目标网站（你的网站）并且没有退出</li>
-<li>受害者有意或者无意的访问了攻击者发布的页面或者链接地址</li>
-</ul>
-<p>整个步骤大致是这个样子的：</p>
-<ol>
-<li>用户小明在你的网站A上面登录了，A返回了一个session ID（使用cookie存储）</li>
-<li>小明的浏览器保持着在A网站的登录状态，事实上几乎所有的网站都是这样做的，一般至少是用户关闭浏览器之前用户的会话是不会结束的</li>
-<li>攻击者小强给小明发送了一个链接地址，小明打开了这个地址，查看了网页的内容</li>
-<li>小明在打开这个地址的时候，这个页面已经自动的对网站A发送了一个请求，这时候因为A网站没有退出，因此只要请求的地址是A的就会携带A的cookie信息，也就是使用A与小明之间的会话</li>
-<li>这时候A网站肯定是不知道这个请求其实是小强伪造的网页上发送的，而是误以为小明就是要这样操作，这样小强就可以随意的更改小明在A上的信息，以小明的身份在A网站上进行操作</li>
-</ol>
-<h2 id="利用方式"><a class="header-anchor" href="#利用方式"> </a>利用方式</h2>
-<p>利用CSRF攻击，主要包含两种方式，一种是基于GET请求方式的利用，另一种是基于POST请求方式的利用。</p>
-<h3 id="GET请求利用"><a class="header-anchor" href="#GET请求利用"> </a>GET请求利用</h3>
-<p>使用GET请求方式的利用是最简单的一种利用方式，其隐患的来源主要是由于在开发系统的时候没有按照HTTP动词的正确使用方式来使用造成的。<strong>对于GET请求来说，它所发起的请求应该是只读的，不允许对网站的任何内容进行修改</strong>。</p>
-<p>但是事实上并不是如此，很多网站在开发的时候，<strong>研发人员错误的认为GET/POST的使用区别</strong>仅仅是在于发送请求的数据是在Body中还是在请求地址中，以及请求内容的大小不同。<strong>对于一些危险的操作比如删除文章，用户授权等允许使用GET方式发送请求，在请求参数中加上文章或者用户的ID，这样就造成了只要请求地址被调用，数据就会产生修改。</strong></p>
-<p>现在假设攻击者（用户ID=121）想将自己的身份添加为网站的管理员，他在网站A上面发了一个帖子，里面包含一张图片，其地址为http://a.com/user/grant_super_user/121</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;img src="http://a.com/user/grant_super_user/121" /&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>设想管理员看到这个帖子的时候，这个图片肯定会自动加载显示的。于是在管理员不知情的情况下，一个赋予用户管理员权限的操作已经悄悄的以他的身份执行了。这时候攻击者121就获取到了网站的管理员权限。</p>
-<h3 id="POST请求利用"><a class="header-anchor" href="#POST请求利用"> </a>POST请求利用</h3>
-<p>相对于GET方式的利用，POST方式的利用更加复杂一些，难度也大了一些。攻击者需要伪造一个能够自动提交的表单来发送POST请求。</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;script&gt;
-
-$(function() {
-
-    $('#CSRF_forCSRFm').trigger('submit');
-
-});
-
-&lt;/script&gt;
-
-&lt;form action="http://a.com/user/grant_super_user" id="CSRF_form" method="post"&gt;
-
-    &lt;input name="uid" value="121" type="hidden"&gt;
-
-&lt;/form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>只要想办法实现用户访问的时候自动提交表单就可以了。</p>
-<h1 id="防范原理"><a class="header-anchor" href="#防范原理"> </a>防范原理</h1>
-<p>防范CSRF攻击，其实本质就是要求网站<strong>能够识别出哪些请求是非正常用户主动发起的</strong>。这就要求我们<strong>在请求中嵌入一些额外的授权数据，让网站服务器能够区分出这些未授权的请求</strong>，比如说在请求参数中添加一个字段，这个字段的值从登录用户的Cookie或者页面中获取的（这个字段的值必须对每个用户来说是随机的，不能有规律可循）。攻击者伪造请求的时候是无法获取页面中与登录用户有关的一个随机值或者用户当前cookie中的内容的，因此就可以避免这种攻击。</p>
-<h2 id="防范技术"><a class="header-anchor" href="#防范技术"> </a>防范技术</h2>
-<h3 id="Synchronizer-token-pattern"><a class="header-anchor" href="#Synchronizer-token-pattern"> </a>Synchronizer token pattern</h3>
-<p>**令牌同步模式（Synchronizer token pattern，简称STP）**是在用户请求的页面中的所有表单中嵌入一个token，在服务端验证这个token的技术。token可以是任意的内容，但是一定要保证无法被攻击者猜测到或者查询到。攻击者在请求中无法使用正确的token，因此可以判断出未授权的请求。</p>
-<p><strong>简单实现STP</strong>：</p>
-<p>首先在index.php中，创建一个表单，在表单中，<strong>我们将session中存储的token放入到隐藏域</strong>，这样，表单提交的时候token会随表单一起提交</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;?php
-
-    $token = sha1(uniqid(rand(), true));
-
-    $_SESSION['token'] = $token;
-
-?&gt;
-
-&lt;form action="buy.php" method="post"&gt;
-
-    &lt;input type="hidden" name="token" value="&lt;?=$token; ?&gt;" /&gt;
-
-    ... 表单内容
-
-&lt;/form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>在服务端校验请求参数的buy.php中，对表单提交过来的token与session中存储的token进行比对，如果一致说明token是有效的</p>
-<pre class="line-numbers language-none"><code class="language-none">if ($_POST['token'] != $_SESSION['token']) {
-
-    // TOKEN无效
-
-    throw new \Exception('Token无效，请求为伪造请求');
-
-}
-
-// TOKEN有效，表单内容处理<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>对于攻击者来说，在伪造请求的时候是无法获取到用户页面中的这个token值的，因此就可以识别出其创建的伪造请求。</p>
-<h3 id="Cookie-to-Header-Token"><a class="header-anchor" href="#Cookie-to-Header-Token"> </a>Cookie-to-Header Token</h3>
-<p>对于使用Js作为主要交互技术的网站，<strong>将CSRF的token写入到cookie中</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">Set-Cookie: CSRF-token=i8XNjC4b8KVok4uw5RftR38Wgp2BFwql; expires=Thu, 23-Jul-2015 10:25:33 GMT; Max-Age=31449600; Path=/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>然后使用javascript读取token的值，在发送http请求的时候将其作为请求的header</p>
-<pre class="line-numbers language-none"><code class="language-none">X-CSRF-Token: i8XNjC4b8KVok4uw5RftR38Wgp2BFwql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>最后服务器验证请求头中的token是否合法。</p>
-<h3 id="验证码"><a class="header-anchor" href="#验证码"> </a>验证码</h3>
-<p><strong>使用验证码可以杜绝CSRF攻击</strong>，但是这种方式要求每个请求都输入一个验证码，显然没有哪个网站愿意使用这种粗暴的方式，用户体验太差，用户会疯掉的。</p>
-]]></content>
-      <categories>
-        <category>安全</category>
-      </categories>
-      <tags>
-        <tag>技术分享</tag>
-        <tag>安全</tag>
       </tags>
   </entry>
   <entry>
@@ -9452,8 +9497,8 @@ myGenericNumber<span class="token punctuation">.</span><span class="token functi
         <category>教程</category>
       </categories>
       <tags>
-        <tag>教程</tag>
         <tag>搬运</tag>
+        <tag>教程</tag>
         <tag>TypeScript</tag>
       </tags>
   </entry>
@@ -12109,51 +12154,6 @@ $_SESSION['token'] = $token;
       <tags>
         <tag>面试</tag>
         <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>4 个鲜为人知的 GitHub 神技巧</title>
-    <url>/2022/05/25/4%E4%B8%AA%E9%B2%9C%E4%B8%BA%E4%BA%BA%E7%9F%A5%E7%9A%84GitHub%E7%A5%9E%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<h1 id="⭐️-在线阅读代码"><a class="header-anchor" href="#⭐️-在线阅读代码"> </a>⭐️ 在线阅读代码</h1>
-<p><strong>在仓库详情界面，按下 <code>.</code> 键</strong>，即可利用在线的 VSCode 阅读代码，而无需下载到本地。</p>
-<p><img src="https://s2.loli.net/2022/05/25/QivIAyOBlJwtW17.png" alt="image-20220525221133638"></p>
-<h1 id="⭐️-在线运行项目"><a class="header-anchor" href="#⭐️-在线运行项目"> </a>⭐️ 在线运行项目</h1>
-<p><strong>在项目的浏览器地址前，加上 <code>gitpod.io/#/</code> 前缀</strong>，即可在线运行项目。</p>
-<p><img src="https://s2.loli.net/2022/05/25/tf4hTWp6zEawcbl.png" alt="image-20220525220206900"></p>
-<h1 id="实用快捷键总结"><a class="header-anchor" href="#实用快捷键总结"> </a>实用快捷键总结</h1>
-<h2 id="查找文件"><a class="header-anchor" href="#查找文件"> </a>查找文件</h2>
-<p><strong>在仓库详情界面，按 <code>T</code> 键，然后输入要查找的文件名。</strong></p>
-<p><img src="https://s2.loli.net/2022/05/25/nt8vwl9GhS5agNj.png" alt="image-20220525221044873"></p>
-<h2 id="跳转至某行代码"><a class="header-anchor" href="#跳转至某行代码"> </a>跳转至某行代码</h2>
-<p>**在源代码界面，按 <code>L</code> 键，然后输入要跳转至的行号。**还可以：</p>
-<ul>
-<li>
-<p>复制该行代码</p>
-</li>
-<li>
-<p>生成永久链接（permalink）</p>
-<p><img src="https://s2.loli.net/2022/05/25/efQlqLiWrKacjdo.png" alt="image-20220525220504285"></p>
-</li>
-</ul>
-<h2 id="查看文件改动记录"><a class="header-anchor" href="#查看文件改动记录"> </a>查看文件改动记录</h2>
-<p><strong>在源代码界面，按 <code>B</code> 键</strong>，即可查看该文件的改动记录。</p>
-<p><img src="https://s2.loli.net/2022/05/25/5Yso6KmMBgJGbNH.png" alt="image-20220525222522439"></p>
-<h2 id="更多"><a class="header-anchor" href="#更多"> </a>更多</h2>
-<p>除此之外，GitHub还有超多快捷键，详见 <a href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">官方文档</a>。</p>
-<h1 id="订阅-GitHub-项目推送"><a class="header-anchor" href="#订阅-GitHub-项目推送"> </a>订阅 GitHub 项目推送</h1>
-<p><strong>在 GitHub 中的 <code>Explore</code> 页面中，点击 <code>Get email updates</code></strong>，即可让 GitHub 定期地推送自己可能感兴趣的优质项目，到自己的邮箱，以了解开源动态。</p>
-<p><img src="https://s2.loli.net/2022/05/25/TlqjEupSJ7F93xs.png" alt="image-20220525221835589"></p>
-<p><img src="https://s2.loli.net/2022/05/25/PKC19zry2vl8mha.png" alt="image-20220525222103562"></p>
-<h1 id="参考资料"><a class="header-anchor" href="#参考资料"> </a>参考资料</h1>
-<p>再次强调，<strong>本文基于 B 站 UP 主 <a href="https://space.bilibili.com/12890453">@程序员鱼皮</a> 的《5 个隐藏的 GitHub 神技巧，助你秒变大佬！》视频总结而成</strong>，视频如下：</p>
-<iframe src="//player.bilibili.com/player.html?aid=853844464&amp;bvid=BV1q54y1f7h6&amp;cid=712063846&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-]]></content>
-      <categories>
-        <category>GitHub</category>
-      </categories>
-      <tags>
-        <tag>搬运</tag>
-        <tag>GitHub</tag>
       </tags>
   </entry>
 </search>
