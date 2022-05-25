@@ -12114,10 +12114,7 @@ $_SESSION['token'] = $token;
   <entry>
     <title>4个鲜为人知的GitHub神技巧</title>
     <url>/2022/05/25/4%E4%B8%AA%E9%B2%9C%E4%B8%BA%E4%BA%BA%E7%9F%A5%E7%9A%84GitHub%E7%A5%9E%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<h1 id="参考资料"><a class="header-anchor" href="#参考资料"> </a>参考资料</h1>
-<p>再次强调，<strong>本文基于B站UP主 <a href="https://space.bilibili.com/12890453">@程序员鱼皮</a> 的《5个隐藏的GitHub神技巧，助你秒变大佬！》视频总结而成</strong>，视频如下：</p>
-<iframe src="//player.bilibili.com/player.html?aid=853844464&amp;bvid=BV1q54y1f7h6&amp;cid=712063846&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-<h1 id="⭐️-在线阅读代码"><a class="header-anchor" href="#⭐️-在线阅读代码"> </a>⭐️ 在线阅读代码</h1>
+    <content><![CDATA[<h1 id="⭐️-在线阅读代码"><a class="header-anchor" href="#⭐️-在线阅读代码"> </a>⭐️ 在线阅读代码</h1>
 <p><strong>在仓库详情界面，按下 <code>.</code> 键</strong>，即可利用在线的 VSCode 阅读代码，而无需下载到本地。</p>
 <p><img src="https://s2.loli.net/2022/05/25/QivIAyOBlJwtW17.png" alt="image-20220525221133638"></p>
 <h1 id="⭐️-在线运行项目"><a class="header-anchor" href="#⭐️-在线运行项目"> </a>⭐️ 在线运行项目</h1>
@@ -12147,6 +12144,9 @@ $_SESSION['token'] = $token;
 <p><strong>在 GitHub 中的 <code>Explore</code> 页面中，点击 <code>Get email updates</code></strong>，即可让 GitHub 定期地推送自己可能感兴趣的优质项目，到自己的邮箱，以了解开源动态。</p>
 <p><img src="https://s2.loli.net/2022/05/25/TlqjEupSJ7F93xs.png" alt="image-20220525221835589"></p>
 <p><img src="https://s2.loli.net/2022/05/25/PKC19zry2vl8mha.png" alt="image-20220525222103562"></p>
+<h1 id="参考资料"><a class="header-anchor" href="#参考资料"> </a>参考资料</h1>
+<p>再次强调，<strong>本文基于B站UP主 <a href="https://space.bilibili.com/12890453">@程序员鱼皮</a> 的《5个隐藏的GitHub神技巧，助你秒变大佬！》视频总结而成</strong>，视频如下：</p>
+<iframe src="//player.bilibili.com/player.html?aid=853844464&amp;bvid=BV1q54y1f7h6&amp;cid=712063846&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 ]]></content>
       <categories>
         <category>GitHub</category>
