@@ -12112,7 +12112,7 @@ $_SESSION['token'] = $token;
       </tags>
   </entry>
   <entry>
-    <title>4个鲜为人知的GitHub神技巧</title>
+    <title>4 个鲜为人知的 GitHub 神技巧</title>
     <url>/2022/05/25/4%E4%B8%AA%E9%B2%9C%E4%B8%BA%E4%BA%BA%E7%9F%A5%E7%9A%84GitHub%E7%A5%9E%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[<h1 id="⭐️-在线阅读代码"><a class="header-anchor" href="#⭐️-在线阅读代码"> </a>⭐️ 在线阅读代码</h1>
 <p><strong>在仓库详情界面，按下 <code>.</code> 键</strong>，即可利用在线的 VSCode 阅读代码，而无需下载到本地。</p>
@@ -12139,13 +12139,13 @@ $_SESSION['token'] = $token;
 <p><strong>在源代码界面，按 <code>B</code> 键</strong>，即可查看该文件的改动记录。</p>
 <p><img src="https://s2.loli.net/2022/05/25/5Yso6KmMBgJGbNH.png" alt="image-20220525222522439"></p>
 <h2 id="更多"><a class="header-anchor" href="#更多"> </a>更多</h2>
-<p>除此之外，GitHub还有超多快捷键，详见<a href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">官方文档</a>。</p>
+<p>除此之外，GitHub还有超多快捷键，详见 <a href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">官方文档</a>。</p>
 <h1 id="订阅-GitHub-项目推送"><a class="header-anchor" href="#订阅-GitHub-项目推送"> </a>订阅 GitHub 项目推送</h1>
 <p><strong>在 GitHub 中的 <code>Explore</code> 页面中，点击 <code>Get email updates</code></strong>，即可让 GitHub 定期地推送自己可能感兴趣的优质项目，到自己的邮箱，以了解开源动态。</p>
 <p><img src="https://s2.loli.net/2022/05/25/TlqjEupSJ7F93xs.png" alt="image-20220525221835589"></p>
 <p><img src="https://s2.loli.net/2022/05/25/PKC19zry2vl8mha.png" alt="image-20220525222103562"></p>
 <h1 id="参考资料"><a class="header-anchor" href="#参考资料"> </a>参考资料</h1>
-<p>再次强调，<strong>本文基于B站UP主 <a href="https://space.bilibili.com/12890453">@程序员鱼皮</a> 的《5个隐藏的GitHub神技巧，助你秒变大佬！》视频总结而成</strong>，视频如下：</p>
+<p>再次强调，<strong>本文基于 B 站 UP 主 <a href="https://space.bilibili.com/12890453">@程序员鱼皮</a> 的《5 个隐藏的 GitHub 神技巧，助你秒变大佬！》视频总结而成</strong>，视频如下：</p>
 <iframe src="//player.bilibili.com/player.html?aid=853844464&amp;bvid=BV1q54y1f7h6&amp;cid=712063846&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 ]]></content>
       <categories>
