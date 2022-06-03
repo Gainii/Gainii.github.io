@@ -12176,7 +12176,7 @@ $_SESSION['token'] = $token;
 </tr>
 </tbody>
 </table>
-<h1 id="🤔829-连续整数求和"><a class="header-anchor" href="#🤔829-连续整数求和"> </a>🤔829. 连续整数求和</h1>
+<h1 id="🤔-829-连续整数求和"><a class="header-anchor" href="#🤔-829-连续整数求和"> </a>🤔 829. 连续整数求和</h1>
 <h2 id="题目描述"><a class="header-anchor" href="#题目描述"> </a>题目描述</h2>
 <p><a href="https://leetcode.cn/problems/consecutive-numbers-sum/">829. 连续整数求和</a></p>
 <blockquote>
@@ -12251,7 +12251,7 @@ x = \frac{n - sum}{i}<br>
 = \frac{n - \frac{(1 + (i-1)) * (i-1)}{2}}{i}<br>
 $$<br>
 <strong>综上所述，当 x 为正整数，也就是 <code>(n - sum) % i === 0</code> 时，说明存在连续 i 个正整数之和等于 n，所以 <code>res++</code> 。</strong></p>
-<p><strong>且当 <code>n - sum &lt;= 0</code> 时，说明比 i 个更多的正整数之和等于 n，所以应跳出循环。</strong></p>
+<p><strong>且当 <code>n - sum &lt;= 0</code> 时，说明已没有比 i 个更多的连续正整数之和等于 n，所以应跳出循环。</strong></p>
 <h2 id="提交记录"><a class="header-anchor" href="#提交记录"> </a>提交记录</h2>
 <table>
 <thead>
