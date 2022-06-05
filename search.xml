@@ -12275,6 +12275,105 @@ $$<br>
 </tr>
 </tbody>
 </table>
+<h1 id="🤔-732-我的日程安排表-III"><a class="header-anchor" href="#🤔-732-我的日程安排表-III"> </a>🤔 732. 我的日程安排表 III</h1>
+<h2 id="题目描述-v2"><a class="header-anchor" href="#题目描述-v2"> </a>题目描述</h2>
+<p><a href="https://leetcode.cn/problems/my-calendar-iii/">732. 我的日程安排表 III</a></p>
+<blockquote>
+<p>当 k 个日程安排有一些时间上的交叉时（例如 k 个日程安排都在同一时间内），就会产生 k 次预订。</p>
+<p>给你一些日程安排 [start, end) ，请你在每个日程安排添加后，返回一个整数 k ，表示所有先前日程安排会产生的最大 k 次预订。</p>
+<p>实现一个 MyCalendarThree 类来存放你的日程安排，你可以一直添加新的日程安排。</p>
+<p>MyCalendarThree() 初始化对象。<br>
+int book(int start, int end) 返回一个整数 k ，表示日历中存在的 k 次预订的最大值。</p>
+<p><strong>示例：</strong></p>
+<p>输入：<br>
+[“MyCalendarThree”, “book”, “book”, “book”, “book”, “book”, “book”]<br>
+[[], [10, 20], [50, 60], [10, 40], [5, 15], [5, 10], [25, 55]]<br>
+输出：<br>
+[null, 1, 1, 2, 3, 3, 3]</p>
+<p>解释：<br>
+MyCalendarThree myCalendarThree = new MyCalendarThree();<br>
+myCalendarThree.book(10, 20); // 返回 1 ，第一个日程安排可以预订并且不存在相交，所以最大 k 次预订是 1 次预订。<br>
+myCalendarThree.book(50, 60); // 返回 1 ，第二个日程安排可以预订并且不存在相交，所以最大 k 次预订是 1 次预订。<br>
+myCalendarThree.book(10, 40); // 返回 2 ，第三个日程安排 [10, 40) 与第一个日程安排相交，所以最大 k 次预订是 2 次预订。<br>
+myCalendarThree.book(5, 15); // 返回 3 ，剩下的日程安排的最大 k 次预订是 3 次预订。<br>
+myCalendarThree.book(5, 10); // 返回 3<br>
+myCalendarThree.book(25, 55); // 返回 3</p>
+<p>提示：</p>
+<p>0 &lt;= start &lt; end &lt;= 109<br>
+每个测试用例，调用 book 函数最多不超过 400次</p>
+</blockquote>
+<h2 id="解法：插旗法-差分数组"><a class="header-anchor" href="#解法：插旗法-差分数组"> </a>解法：插旗法 / 差分数组</h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">MyCalendarThree</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>booked <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/** 
+ * @param {number} start 
+ * @param {number} end
+ * @return {number}
+ */</span>
+<span class="token class-name">MyCalendarThree</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">book</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">start<span class="token punctuation">,</span> end</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> flags <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 当前旗子数</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>booked<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>start<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>booked<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>start<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span>booked<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>start<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 进入 =&gt; 插旗</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>booked<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>end<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>booked<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>end<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span>booked<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>end<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">:</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 离开 =&gt; 拔旗</span>
+
+  <span class="token comment">// 对 map 的 key 排序</span>
+  <span class="token keyword">let</span> arr <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>booked<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  arr<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">-</span> b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>booked <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token punctuation">[</span>key<span class="token punctuation">,</span> value<span class="token punctuation">]</span> <span class="token keyword">of</span> <span class="token keyword">this</span><span class="token punctuation">.</span>booked<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    flags <span class="token operator">+=</span> value<span class="token punctuation">;</span>
+    k <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span> flags<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">return</span> k<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * Your MyCalendarThree object will be instantiated and called as such:
+ * var obj = new MyCalendarThree()
+ * var param_1 = obj.book(start,end)
+ */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="思路-v2"><a class="header-anchor" href="#思路-v2"> </a>思路</h3>
+<p>此方法适合<strong>解区间的最大重叠数量（或最大并行数量）的题目</strong>。</p>
+<blockquote>
+<p>何为<strong>插旗法</strong>？</p>
+<p>进入一个区间的时候将该点旗子数+1，代表插上一面 🚩 ；离开时将该点旗子数-1，代表拔出一面 🚩 。</p>
+<p>若区间之间不重合，则任意连续两个点的旗子数之和必然等于 0 ，如一个为 +1，下一个为 -1；若区间之间重合，则存在连续两个点的旗子数之和必然大于 0，如一个为 +1，下一个也为 +1。</p>
+</blockquote>
+<p>举个例子的话：</p>
+<p>① [10, 20]；② [50, 60]；③ [10, 40]；④ [5, 15]</p>
+<p>① 时的插旗坐标 &lt;10, 1&gt; &lt;20, -1&gt;，此时任意两个连续点的旗子数之和都为 0。</p>
+<p>② 时的插旗坐标 &lt;10, 1&gt; &lt;20, -1&gt; &lt;50, 1&gt; &lt;60, -1&gt;，此时任意两个连续点的旗子数之和都为 0。</p>
+<p>③ 时的插旗坐标 &lt;10, 2&gt; &lt;20, -1&gt; &lt;40, -1&gt; &lt;50, 1&gt; &lt;60, -1&gt;，此时存在两点 &lt;10, 2&gt; 和 &lt;20, -1&gt; 的旗子数之和为 1，说明区间存在重叠！</p>
+<p>④ 时的插旗坐标 &lt;5, 1&gt; &lt;10, 2&gt; &lt;15, -1&gt; &lt;20, -1&gt; &lt;40, -1&gt; &lt;50, 1&gt; &lt;60, -1&gt;，此时存在两点 &lt;5, 1&gt; 和 &lt;10, 2&gt; 的旗子数之和为 3，说明区间又存在重叠了！</p>
+<p>我们还会注意到，如果将所有点的旗子数依次（<strong>必须将点由小到大排序</strong>）累加，<strong>累加过程中出现的最大值，即为区间重叠的最大次数</strong>。对应代码的第 21- 24 行。</p>
+<p>在本方法中，我们<strong>使用 <code>Map</code> 来存储插旗坐标</strong>，且正如上文所说，<strong>每次更新 <code>Map</code> 都需要对 <code>Map</code> 中的 <code>key</code> 即点的坐标由小到大排序</strong>。对应 16 - 19 行代码。</p>
+<h2 id="提交记录-v2"><a class="header-anchor" href="#提交记录-v2"> </a>提交记录</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">提交结果</th>
+<th style="text-align:left">执行用时</th>
+<th style="text-align:left">内存消耗</th>
+<th style="text-align:left">语言</th>
+<th style="text-align:left">提交时间</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://leetcode.cn/submissions/detail/322046704/">通过</a></td>
+<td style="text-align:left">816 ms</td>
+<td style="text-align:left">52 MB</td>
+<td style="text-align:left">JavaScript</td>
+<td style="text-align:left">2022/06/06 01:56</td>
+<td style="text-align:left">插旗法</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
       <categories>
         <category>算法</category>
