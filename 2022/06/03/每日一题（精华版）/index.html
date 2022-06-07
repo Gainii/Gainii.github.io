@@ -29,7 +29,7 @@
 <meta property="og:description" content="本文收录了 Leetcode 每日一题中，比较值得记录的算法题。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-02T17:48:26.000Z">
-<meta property="article:modified_time" content="2022-06-07T17:12:18.607Z">
+<meta property="article:modified_time" content="2022-06-07T17:13:24.950Z">
 <meta property="article:author" content="嘎嘎">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="Leetcode">
@@ -273,7 +273,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-06-08 01:12:18" itemprop="dateModified" datetime="2022-06-08T01:12:18+08:00">2022-06-08</time>
+        <time title="修改时间：2022-06-08 01:13:24" itemprop="dateModified" datetime="2022-06-08T01:13:24+08:00">2022-06-08</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -573,7 +573,7 @@ points[i].length == 2<br>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>当然，我这个方法不够简洁，判断三点是否共线可以看这篇文章<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/valid-boomerang/solution/by-nehzil-if8z/">《数学推导不在一条直线公式》</a>。</p>
 <p>将本题收录在本篇博客中，是想强调上述代码的<strong>第 7 行</strong>：对 <code>points</code> 进行去重时，使用的方法。</p>
-<p><strong>我们都知道，数组去重可以使用 <code>Array.from(new Set(要去重的数组))</code> ，但是由于本题中 <code>points</code> 的元素为数组，因此那样做无法达到去重的目的。所以，我使用 <code>points.map(e =&gt; e.toString())</code> 将 <code>points</code> 的元素全部变为字符串，再对 <code>points</code> 进行去重，然后再将去重后的 <code>points</code> 中的每个字符串元素转回数组。注意，如果原来的 <code>points</code> 为 <code>[[0,1],[0,1],[2,1]]</code> 的话，去重后的 <code>points</code> 将为 <code>[['0','1'],['2','1']]</code> 。由于不影响后面的运算，因此就没有继续对其处理。</strong></p>
+<p><strong>我们都知道，数组去重可以使用 <code>Array.from(new Set(要去重的数组))</code> ，但是由于本题中 <code>points</code> 的元素为数组，因此那样做无法达到去重的目的。所以，我使用 <code>points.map(e =&gt; e.toString())</code> 将 <code>points</code> 的元素全部变为字符串，再对 <code>points</code> 进行去重，然后再将去重后的 <code>points</code> 中的每个字符串元素转回数组。注意 ⚠️ ，如果原来的 <code>points</code> 为 <code>[[0,1],[0,1],[2,1]]</code> 的话，去重后的 <code>points</code> 将为 <code>[['0','1'],['2','1']]</code> 。由于不影响后面的运算，因此就没有继续对其处理。</strong></p>
 
     </div>
 
