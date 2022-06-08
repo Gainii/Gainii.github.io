@@ -3619,7 +3619,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <iframe src="//player.bilibili.com/player.html?aid=89760569&amp;bvid=BV15741177Eh&amp;cid=153295977&amp;page=8" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 <p><a href="https://www.bilibili.com/video/BV15741177Eh?p=8&amp;share_source=copy_web">视频地址</a></p>
 <h1 id="Vue中的MVVM"><a class="header-anchor" href="#Vue中的MVVM"> </a>Vue中的MVVM</h1>
-<img src="http://cn.vuejs.org/images/mvvm.png?_=5619070" alt="Vue的MVVM模式" style="zoom: 50%;">
+<img src="https://s2.loli.net/2022/06/08/QYaqOMHEehRuZgD.png" alt="Vue的MVVM模式" style="zoom: 50%;">
 <h2 id="View层"><a class="header-anchor" href="#View层"> </a>View层</h2>
 <ul>
 <li>视图层</li>
@@ -4458,19 +4458,19 @@ methods: {
 </ol>
 <p>基于以上这两点假设，使得虚拟DOM的Diff算法的复杂度从O(n<sup>3</sup>)降到了O(n)。</p>
 <p>针对假设中组件层级的说法，我们来看<a href="https://link.zhihu.com/?target=https%3A//calendar.perfplanet.com/2013/diff/">React’s diff algorithm</a>中的一张图就可以明白：</p>
-<p><img src="https://pic2.zhimg.com/80/v2-73120ff4c30dd81a128cd422e325786a_720w.jpg?source=1940ef5c" alt="节点层级"></p>
+<p><img src="https://s2.loli.net/2022/06/08/WiGXtPphcqj1UuA.png" alt="节点层级"></p>
 <p><strong>当页面数据发生变化时，Diff 算法只会比较同一层级的节点：</strong></p>
 <ul>
 <li><strong>如果节点类型相同，则重新设置该节点的属性，从而实现节点更新</strong></li>
 <li><strong>如果节点类型不同，则直接删掉旧的节点，创建并插入新的节点，然后不会再比较这个节点以后的子节点了</strong></li>
 </ul>
 <p>举个例子：</p>
-<img src="https://pic4.zhimg.com/80/v2-6e88cc53a7e427f0ae8340cf930ac30d_720w.jpg?source=1940ef5c" alt=":key-例子-1" style="zoom:67%;">
+<img src="https://s2.loli.net/2022/06/08/lUQdaNytfTpkKRC.png" alt=":key-例子-1" style="zoom:67%;">
 <p>如上图，我们希望在B和C的中间插入一个F，Diff 算法默认执行起来是这样的：</p>
-<img src="https://pic2.zhimg.com/80/v2-bf76311258f100b789226ccbb2600071_720w.jpg?source=1940ef5c" alt=":key-例子-1" style="zoom:67%;">
+<img src="https://s2.loli.net/2022/06/08/oeZszHBIMWRGAx1.png" alt=":key-例子-1" style="zoom:67%;">
 <p>我们可以发现，Diff 算法将C更新为F，D更新为C，E更新为D，最后插入了E，这效率也太低了吧！</p>
 <p>所以官方才推荐我们使用 key 属性来作为每个节点的唯一标识，这样 Diff 算法就可以轻松地找到正确的位置来插入新的节点。</p>
-<p><img src="https://pic1.zhimg.com/80/v2-bb1147af7c458f0b09d6a3c2f74b0100_720w.jpg?source=1940ef5c" alt="有无key的对比图"></p>
+<p><img src="https://s2.loli.net/2022/06/08/sFVCyf9Z1wgKM4G.png" alt="有无key的对比图"></p>
 <p><strong>【总结】key的作用：</strong></p>
 <p><strong>key 的作用主要是为了高效得更新虚拟 DOM。在Vue中，过渡切换相同标签名的元素时，应该使用key属性，目的是为了让Vue可以区分它们，否则Vue指挥替换其内部属性，而不会触发过渡效果。</strong></p>
 <h3 id="key-的选取"><a class="header-anchor" href="#key-的选取"> </a>key 的选取</h3>
@@ -4645,7 +4645,7 @@ methods: {
 <p>h2元素中<code>message</code>的值向input元素中<code>value</code>绑定</p>
 </li>
 </ol>
-<img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20210630132730411.png" alt="v-model双向绑定-" style="zoom: 67%;">
+<img src="https://s2.loli.net/2022/06/08/DaIHTN5GyeWnB7w.png" alt="v-model双向绑定-" style="zoom: 67%;">
 <p>当然，v-model 除了可以用在 input 元素中，同样也可以用在 textarea 元素中哦。</p>
 <h2 id="v-model-的原理"><a class="header-anchor" href="#v-model-的原理"> </a>v-model 的原理</h2>
 <p>下面我们试试手动实现 v-model</p>
@@ -4735,7 +4735,6 @@ methods: {
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="C:\Users\Lee\Desktop\GIF 2021-6-30 14-25-39.gif" alt="GIF 2021-6-30 14-25-39" style="zoom:80%;">
 <h2 id="v-model-结合-select-元素"><a class="header-anchor" href="#v-model-结合-select-元素"> </a>v-model 结合 select 元素</h2>
 <p>在 select 元素中添加 v-model。</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -4771,7 +4770,7 @@ methods: {
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20210630145024114.png" alt="image-20210630145024114" style="zoom:80%;">
+<img src="https://s2.loli.net/2022/06/08/NdEGkHSPrUZ5i9X.png" alt="image-20210630145024114" style="zoom:80%;">
 <h2 id="值绑定"><a class="header-anchor" href="#值绑定"> </a>值绑定</h2>
 <p>其实在开发中，我们对于 input 元素的<code>value</code>通常不是固定的，需要动态绑定。以“v-model 结合 checkbox 类型”中举的例子为例，我们在<code>data</code>中，传入需要用户勾选的爱好，这时使用值绑定就可以动态的显示在页面中啦：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -4791,7 +4790,7 @@ methods: {
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20210630150614018.png" alt="image-20210630150614018" style="zoom:80%;">
+<img src="https://s2.loli.net/2022/06/08/tdQlPN1yxHjiKEJ.png" alt="image-20210630150614018" style="zoom:80%;">
 <h2 id="v-model-的修饰符"><a class="header-anchor" href="#v-model-的修饰符"> </a>v-model 的修饰符</h2>
 <ul>
 <li><code>.lazy</code>修饰符：让数据在输入框失去焦点或用户敲击回车时，才会更新</li>
