@@ -5948,7 +5948,7 @@ methods: {
 </table>
 <h2 id="42-接雨水⭐️⭐️⭐️"><a class="header-anchor" href="#42-接雨水⭐️⭐️⭐️"> </a>42. 接雨水⭐️⭐️⭐️</h2>
 <h3 id="题目描述-v6"><a class="header-anchor" href="#题目描述-v6"> </a>题目描述</h3>
-<h5 id="42-接雨水"><a class="header-anchor" href="#42-接雨水"> </a><a href="https://leetcode-cn.com/problems/trapping-rain-water/">42. 接雨水</a></h5>
+<p><a href="https://leetcode-cn.com/problems/trapping-rain-water/">42. 接雨水</a></p>
 <blockquote>
 <p>给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。</p>
 <p>示例 1：</p>
@@ -12413,6 +12413,193 @@ points[i].length == 2<br>
 <p>当然，我这个方法不够简洁，判断三点是否共线可以看这篇文章<a href="https://leetcode.cn/problems/valid-boomerang/solution/by-nehzil-if8z/">《数学推导不在一条直线公式》</a>。</p>
 <p>将本题收录在本篇博客中，是想强调上述代码的<strong>第 7 行</strong>：对 <code>points</code> 进行去重时，使用的方法。</p>
 <p><strong>我们都知道，数组去重可以使用 <code>Array.from(new Set(要去重的数组))</code> ，但是由于本题中 <code>points</code> 的元素为数组，因此那样做无法达到去重的目的。所以，我使用 <code>points.map(e =&gt; e.toString())</code> 将 <code>points</code> 的元素全部变为字符串，再对 <code>points</code> 进行去重，然后再将去重后的 <code>points</code> 中的每个字符串元素转回数组。注意 ⚠️ ，如果原来的 <code>points</code> 为 <code>[[0,1],[0,1],[2,1]]</code> 的话，去重后的 <code>points</code> 将为 <code>[['0','1'],['2','1']]</code> 。由于不影响后面的运算，因此就没有继续对其处理。</strong></p>
+<h1 id="🤔-30-串联所有单词的子串"><a class="header-anchor" href="#🤔-30-串联所有单词的子串"> </a>🤔 30. 串联所有单词的子串</h1>
+<h2 id="题目描述-v4"><a class="header-anchor" href="#题目描述-v4"> </a>题目描述</h2>
+<p><a href="https://leetcode.cn/problems/substring-with-concatenation-of-all-words/">30. 串联所有单词的子串</a></p>
+<blockquote>
+<p>给定一个字符串 s 和一些 长度相同 的单词 words 。找出 s 中恰好可以由 words 中所有单词串联形成的子串的起始位置。</p>
+<p>注意子串要与 words 中的单词完全匹配，中间不能有其他字符 ，但不需要考虑 words 中单词串联的顺序。</p>
+<p><strong>示例 1：</strong></p>
+<p>输入：s = “barfoothefoobarman”, words = [“foo”,“bar”]<br>
+输出：[0,9]<br>
+解释：<br>
+从索引 0 和 9 开始的子串分别是 “barfoo” 和 “foobar” 。<br>
+输出的顺序不重要, [9,0] 也是有效答案。</p>
+<p><strong>示例 2：</strong></p>
+<p>输入：s = “wordgoodgoodgoodbestword”, words = [“word”,“good”,“best”,“word”]<br>
+输出：[]<br>
+示例 3：</p>
+<p>输入：s = “barfoofoobarthefoobarman”, words = [“bar”,“foo”,“the”]<br>
+输出：[6,9,12]</p>
+<p>提示：</p>
+<p>1 &lt;= s.length &lt;= 104<br>
+s 由小写英文字母组成<br>
+1 &lt;= words.length &lt;= 5000<br>
+1 &lt;= words[i].length &lt;= 30<br>
+words[i] 由小写英文字母组成</p>
+</blockquote>
+<h2 id="⛔️-解法：回溯算法【超时】"><a class="header-anchor" href="#⛔️-解法：回溯算法【超时】"> </a>⛔️ 解法：回溯算法【超时】</h2>
+<p>最近做题生疏了，看到这道题第一反应竟然是回溯算法 😅。</p>
+<p>思路：将 <code>words</code> 中的所有元素进行全排列（需要考虑重复元素），然后对字符串 <code>s</code> 使用 <code>indexOf()</code> 方法，求出全排列后的每个元素在 <code>s</code> 中的下标。</p>
+<p>例如：<code>s = "barfoothefoobarfooman" words = ["foo","bar","foo"]</code>，对 <code>words</code> 进行全排列，得 <code>subStrs = [ 'foobarfoo', 'foofoobar', 'barfoofoo' ]</code>，再对 <code>subStrs</code> 中的每个元素求出其在 <code>s</code> 中的下标即可。</p>
+<p>代码如下：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+ * @param {string} s
+ * @param {string[]} words
+ * @return {number[]}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">findSubstring</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">s<span class="token punctuation">,</span> words</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> subStrs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> track <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  words<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">word<span class="token punctuation">,</span> i</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    map<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token function">backtrack</span><span class="token punctuation">(</span>track<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> str <span class="token keyword">of</span> subStrs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> idx <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>idx <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>idx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      idx <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span> idx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">function</span> <span class="token function">backtrack</span><span class="token punctuation">(</span><span class="token parameter">track<span class="token punctuation">,</span> start</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>track<span class="token punctuation">.</span>length <span class="token operator">===</span> words<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> str <span class="token operator">=</span> track<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>subStrs<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span> subStrs<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> words<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
+      track<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>words<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      map<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">backtrack</span><span class="token punctuation">(</span>track<span class="token punctuation">,</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      track<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      map<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然鹅，在执行 <a href="https://leetcode.cn/submissions/detail/328273906/testcase/">这个用例</a> 时，会超出时间限制。<a href="https://leetcode.cn/submissions/detail/328273906/">查看提交记录</a></p>
+<h2 id="解法：滑动窗口"><a class="header-anchor" href="#解法：滑动窗口"> </a>解法：滑动窗口</h2>
+<p>**既然这道题是子串问题，那么我们第一时间就应该想到用“滑动窗口”来解决这道题。**起初，我是这样写的：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+ * @param {string} s
+ * @param {string[]} words
+ * @return {number[]}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">findSubstring</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">s<span class="token punctuation">,</span> words</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> need <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> window <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> word <span class="token keyword">of</span> words<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    need<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span> <span class="token operator">?</span> need<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>word<span class="token punctuation">,</span> need<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">:</span> need<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>word<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">let</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> right <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> valid <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>right <span class="token operator">&lt;</span> s<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> strR <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>right<span class="token punctuation">,</span> right <span class="token operator">+</span> words<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    right <span class="token operator">+=</span> words<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>need<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>strR<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      window<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>strR<span class="token punctuation">)</span> <span class="token operator">?</span> window<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>strR<span class="token punctuation">,</span> window<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>strR<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">:</span> window<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>strR<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>need<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>strR<span class="token punctuation">)</span> <span class="token operator">===</span> window<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>strR<span class="token punctuation">)</span><span class="token punctuation">)</span> valid<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>valid <span class="token operator">===</span> need<span class="token punctuation">.</span>size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left <span class="token operator">===</span> words<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length <span class="token operator">*</span> words<span class="token punctuation">.</span>length<span class="token punctuation">)</span> res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> strL <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>left<span class="token punctuation">,</span> left <span class="token operator">+</span> words<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      left <span class="token operator">+=</span> words<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>need<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>strL<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>need<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>strL<span class="token punctuation">)</span> <span class="token operator">===</span> window<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>strL<span class="token punctuation">)</span><span class="token punctuation">)</span> valid<span class="token operator">--</span><span class="token punctuation">;</span>
+        window<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>strL<span class="token punctuation">,</span> window<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>strL<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>注意，题干中有说 <code>words</code> 中的单词的长度都相同，所以<strong>滑动窗口可以每次滑动 <code>words[0].length</code> 个字符</strong>，如代码第 17 行和第 26 行所示。</p>
+<p>但是当执行 <a href="https://leetcode.cn/submissions/detail/328272142/">这个用例</a> 时，出现了错误。简单来说就是当 <code>s = "ababaab" words = ["ab","ba","ba"]</code> 时，输出 <code>[]</code> 而不是 <code>[1]</code>，所以我们应该<strong>考虑截断 <code>s</code> 的第 <code>0 ~ words[0].length - 1</code> 个字符</strong>。就像在上例中，我们需要将 <code>s</code> 截断为 <code>"babaab"</code> 才能求出正确答案。</p>
+<p>因此，<strong>正确的代码</strong>如下：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+ * @param {string} s
+ * @param {string[]} words
+ * @return {number[]}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">findSubstring</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">s<span class="token punctuation">,</span> words</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> need <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> word <span class="token keyword">of</span> words<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    need<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span> <span class="token operator">?</span> need<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>word<span class="token punctuation">,</span> need<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">:</span> need<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>word<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> start <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> start <span class="token operator">&lt;</span> words<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span> start<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> window <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> left <span class="token operator">=</span> start<span class="token punctuation">,</span> right <span class="token operator">=</span> start<span class="token punctuation">;</span>
+    <span class="token keyword">let</span> valid <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>right <span class="token operator">&lt;</span> s<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> strR <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>right<span class="token punctuation">,</span> right <span class="token operator">+</span> words<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      right <span class="token operator">+=</span> words<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>need<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>strR<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        window<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>strR<span class="token punctuation">)</span> <span class="token operator">?</span> window<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>strR<span class="token punctuation">,</span> window<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>strR<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">:</span> window<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>strR<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>need<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>strR<span class="token punctuation">)</span> <span class="token operator">===</span> window<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>strR<span class="token punctuation">)</span><span class="token punctuation">)</span> valid<span class="token operator">++</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">while</span> <span class="token punctuation">(</span>valid <span class="token operator">===</span> need<span class="token punctuation">.</span>size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left <span class="token operator">===</span> words<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length <span class="token operator">*</span> words<span class="token punctuation">.</span>length<span class="token punctuation">)</span> res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> strL <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>left<span class="token punctuation">,</span> left <span class="token operator">+</span> words<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        left <span class="token operator">+=</span> words<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>need<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>strL<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>need<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>strL<span class="token punctuation">)</span> <span class="token operator">===</span> window<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>strL<span class="token punctuation">)</span><span class="token punctuation">)</span> valid<span class="token operator">--</span><span class="token punctuation">;</span>
+          window<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>strL<span class="token punctuation">,</span> window<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>strL<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="提交记录-v3"><a class="header-anchor" href="#提交记录-v3"> </a>提交记录</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">提交结果</th>
+<th style="text-align:left">执行用时</th>
+<th style="text-align:left">内存消耗</th>
+<th style="text-align:left">语言</th>
+<th style="text-align:left">提交时间</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://leetcode.cn/submissions/detail/328273906/">超出时间限制</a></td>
+<td style="text-align:left">N/A</td>
+<td style="text-align:left">N/A</td>
+<td style="text-align:left">JavaScript</td>
+<td style="text-align:left">2022/06/23 02:08</td>
+<td style="text-align:left">⛔️ 回溯算法</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://leetcode.cn/submissions/detail/328273002/">通过</a></td>
+<td style="text-align:left">76 ms</td>
+<td style="text-align:left">43.4 MB</td>
+<td style="text-align:left">JavaScript</td>
+<td style="text-align:left">2022/06/23 01:50</td>
+<td style="text-align:left">滑动窗口</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://leetcode.cn/submissions/detail/328272142/">解答错误</a></td>
+<td style="text-align:left">N/A</td>
+<td style="text-align:left">N/A</td>
+<td style="text-align:left">JavaScript</td>
+<td style="text-align:left">2022/06/23 01:37</td>
+<td style="text-align:left">⛔️ 应考虑截断</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
       <categories>
         <category>算法</category>
